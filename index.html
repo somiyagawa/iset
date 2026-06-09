@@ -349,6 +349,64 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color:var(--bone-2);max-width:700px;line-height:1.35;
   }
 
+  /* ================= DATE HALO ================= */
+  .date-halo{
+    position:relative;align-self:flex-start;isolation:isolate;
+    display:flex;align-items:center;gap:26px;margin:6px 0;padding:6px 10px 6px 0;
+  }
+  .date-halo::before{
+    content:"";position:absolute;z-index:-2;
+    left:56px;top:50%;width:260px;height:260px;
+    transform:translate(-50%,-50%);border-radius:50%;
+    background:radial-gradient(circle, rgba(0,229,255,0.5), rgba(229,162,58,0.2) 42%, transparent 70%);
+    filter:blur(26px);
+    animation:haloPulse 3.4s ease-in-out infinite;
+  }
+  @keyframes haloPulse{
+    0%,100%{opacity:0.65;transform:translate(-50%,-50%) scale(1)}
+    50%{opacity:1;transform:translate(-50%,-50%) scale(1.14)}
+  }
+  .date-halo .ring,.date-halo .ring2{
+    content:"";position:absolute;z-index:-1;left:56px;top:50%;border-radius:50%;
+    transform:translate(-50%,-50%);pointer-events:none;
+  }
+  .date-halo .ring{
+    width:182px;height:182px;
+    border:1.5px solid rgba(0,229,255,0.6);
+    border-top-color:transparent;border-right-color:transparent;
+    box-shadow:0 0 20px rgba(0,229,255,0.45), inset 0 0 22px rgba(0,229,255,0.12);
+    animation:spin 8s linear infinite;
+  }
+  .date-halo .ring2{
+    width:212px;height:212px;
+    border:1px dashed rgba(229,162,58,0.45);
+    animation:spin 16s linear infinite reverse;
+  }
+  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  .date-halo .day{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(5rem,12vw,8.5rem);line-height:0.74;color:var(--bone);
+    text-shadow:0 0 20px rgba(0,229,255,0.7), 0 0 46px rgba(0,229,255,0.4);
+    position:relative;
+  }
+  .date-halo .stack2{display:flex;flex-direction:column;gap:8px}
+  .date-halo .month{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.7rem,3.6vw,2.8rem);line-height:0.9;color:var(--amber);
+    text-shadow:0 0 16px rgba(229,162,58,0.55);
+  }
+  .date-halo .dow{
+    font-family:'JetBrains Mono',monospace;font-size:0.78rem;
+    text-transform:uppercase;letter-spacing:0.3em;color:var(--cyan);
+    text-shadow:0 0 10px rgba(0,229,255,0.5);
+  }
+  @media (max-width:760px){
+    .date-halo{gap:18px}
+    .date-halo::before{width:200px;height:200px;left:46px}
+    .date-halo .ring{width:140px;height:140px;left:46px}
+    .date-halo .ring2{width:166px;height:166px;left:46px}
+  }
+
   /* ================= REGISTER BUTTON ================= */
   @keyframes btnGlow{
     0%,100%{box-shadow:0 0 16px rgba(0,229,255,0.55), 0 0 44px rgba(0,229,255,0.28)}
@@ -963,8 +1021,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HUD -->
 <aside class="hud">
   <div class="h-item live">
-    <span class="k">// SYS · STATUS</span>
-    <span class="v">ONLINE</span>
+    <span class="k">// FORMAT</span>
+    <span class="v">IN-PERSON &amp; ONLINE</span>
   </div>
   <div class="h-item">
     <span class="k">// TIME · JST</span>
@@ -980,7 +1038,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="h-item">
     <span class="k">// LANG</span>
-    <span class="v">EN / JP</span>
+    <span class="v">English</span>
   </div>
 </aside>
 
@@ -1029,7 +1087,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="badge amber"><span class="b-dot"></span>NEXT DAY AFTER CRE26</span>
         <span class="badge"><span class="b-dot"></span>SINGLE-DAY</span>
         <span class="badge"><span class="b-dot"></span>11 PAPERS</span>
-        <span class="badge"><span class="b-dot"></span>EN · JP</span>
+        <span class="badge"><span class="b-dot"></span>ENGLISH</span>
         <span class="badge"><span class="b-dot"></span>HYBRID · ONLINE</span>
       </div>
 
@@ -1050,6 +1108,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
 
       <p class="subtitle">A single-day symposium<span class="sep">//</span>16 July 2026 at the University of Tsukuba, Tokyo Campus (Lecture Room 120) — also streamed online.</p>
+
+      <div class="date-halo" aria-label="July 16, Thursday, 2026">
+        <span class="ring2"></span>
+        <span class="ring"></span>
+        <span class="day">16</span>
+        <span class="stack2">
+          <span class="month">July</span>
+          <span class="dow">Thursday · 2026</span>
+        </span>
+      </div>
 
       <a class="btn-register" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
         <span class="led"></span>
@@ -1128,7 +1196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="sec-head">
       <div class="num">§ 01 // INDEX.exec</div>
-      <h2>A single day, <em>eleven papers,</em><br/><span class="cy">one ancient civilisation.</span></h2>
+      <h2>A single day, <em>eleven papers,</em><br/><span class="cy">one civilisation.</span></h2>
       <span class="jp-sub"><span class="hash">#</span><span class="jp-t">一日、十一の発表、ひとつの文明。</span></span>
     </div>
 
