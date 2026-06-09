@@ -12,6 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="apple-touch-icon" href="favicon.svg" />
+<script>(function(){try{var t=localStorage.getItem('iset-theme');if(!t){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 <title>The 2nd International Symposium of Egyptology in Tokyo (ISET 2026) · 16 July 2026</title>
 <meta name="description" content="The 2nd International Symposium of Egyptology in Tokyo/Tsukuba (ISET 2026). 16 July 2026, University of Tsukuba, Tokyo Campus." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -374,6 +375,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .cre-tag:hover{transform:translateX(-3px)}
   .cre-tag:hover .em{color:var(--sienna)}
+  .venue-tag{
+    text-align:right;max-width:480px;margin-top:6px;color:var(--bone);
+  }
+  .venue-tag .vlabel{
+    display:block;font-family:'JetBrains Mono',monospace;
+    font-size:0.66rem;text-transform:uppercase;letter-spacing:0.3em;
+    color:var(--cyan);margin-bottom:7px;text-shadow:0 0 10px rgba(0,229,255,0.45);
+  }
+  .venue-tag .vmain{
+    display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.35rem,2.7vw,2.3rem);line-height:1.04;letter-spacing:-0.01em;
+    text-shadow:0 0 18px rgba(0,229,255,0.28);
+  }
+  .venue-tag .vmain .rm{font-style:normal;color:var(--cyan)}
+  .venue-tag .vsub{
+    display:block;font-family:'JetBrains Mono',monospace;
+    font-size:0.82rem;letter-spacing:0.12em;color:var(--bone-2);margin-top:9px;
+  }
+  .venue-tag .vtime{
+    color:var(--amber);font-weight:700;letter-spacing:0.14em;
+    text-shadow:0 0 14px rgba(229,162,58,0.55);
+  }
   .date-halo::before{
     content:"";position:absolute;z-index:-2;
     left:56px;top:50%;width:260px;height:260px;
@@ -423,6 +446,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width:760px){
     .tr-stack{position:static;right:auto;top:auto;align-items:flex-start;margin:6px 0}
     .cre-tag{text-align:left}
+    .venue-tag{text-align:left}
     .date-halo{gap:18px}
     .date-halo::before{width:200px;height:200px;left:46px}
     .date-halo .ring{width:140px;height:140px;left:46px}
@@ -1013,6 +1037,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     content:"";width:6px;height:6px;border-radius:50%;background:var(--jade);
     box-shadow:0 0 6px var(--jade);animation:pulse 1.4s infinite;
   }
+
+  /* ================= THEME TOGGLE & LIGHT MODE ================= */
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .theme-toggle{
+    width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;
+    font-size:1rem;line-height:1;border:1px solid var(--line-2);
+    color:var(--bone-2);background:rgba(127,127,127,0.10);cursor:none;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .theme-toggle:hover{color:var(--cyan);border-color:var(--cyan)}
+
+  html[data-theme="light"]{
+    --ink:#eef2f7;--ink-2:#e5eaf1;--ink-3:#d8dee8;--ink-4:#c6cedb;
+    --bone:#0b0d12;--bone-2:#39404e;--bone-3:#5c6473;--muted:#838b9b;
+    --amber:#b3760f;--amber-deep:#8a5a0c;--sienna:#df421d;
+    --cyan:#0089a6;--cyan-deep:#00657a;--jade:#0f9d63;--magenta:#cf1f62;
+    --line:rgba(6,7,10,0.10);--line-2:rgba(6,7,10,0.16);--grid:rgba(0,137,166,0.06);
+  }
+  html[data-theme="light"] body{
+    background-image:radial-gradient(circle, rgba(6,7,10,0.05) 1px, transparent 1px);
+  }
+  html[data-theme="light"] body::before{opacity:0.05}
+  html[data-theme="light"] body::after{opacity:0.5}
+  /* keep image-led regions on a dark palette for legibility */
+  html[data-theme="light"] .boot,
+  html[data-theme="light"] .hero,
+  html[data-theme="light"] nav.top,
+  html[data-theme="light"] .vt-cell.photo{
+    --ink:#06070a;--ink-2:#0c0e13;--ink-3:#13161d;--ink-4:#1c2029;
+    --bone:#eef2f7;--bone-2:#b8c0cc;--bone-3:#7a8395;--muted:#4a5160;
+    --amber:#e5a23a;--amber-deep:#b97a1c;--sienna:#ff5a2e;
+    --cyan:#00e5ff;--cyan-deep:#0091a8;
+    --line:rgba(238,242,247,0.07);--line-2:rgba(238,242,247,0.14);
+  }
+  html[data-theme="light"] .boot{background:#06070a}
+  html[data-theme="light"] .map-frame iframe{filter:none}
 </style>
 </head>
 <body>
@@ -1054,9 +1114,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#volume"><span class="n">05</span>volume</a></li>
     <li><a href="#funding"><span class="n">06</span>funding</a></li>
   </ul>
-  <a class="nav-reg" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
-    <span class="led"></span>Register
-  </a>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme">☀</button>
+    <a class="nav-reg" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
+      <span class="led"></span>Register
+    </a>
+  </div>
 </nav>
 
 <!-- ============ HERO ============ -->
@@ -1120,6 +1183,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="cre-tag" href="https://cre26.tokyo/" target="_blank" rel="noopener">
           Post-Conference Symposium<br/><span class="em">after CRE26</span>
         </a>
+        <div class="venue-tag">
+          <span class="vlabel">// Venue</span>
+          <span class="vmain">University of Tsukuba, Tokyo Campus<br/><span class="rm">Room 120</span></span>
+          <span class="vsub"><span class="vtime">09:00 – 17:00</span> JST</span>
+        </div>
       </div>
 
       <a class="btn-register" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
@@ -1728,6 +1796,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="float-reg" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
   <span class="led"></span>Register →
 </a>
+
+<script>
+  // ====== THEME TOGGLE ======
+  (function(){
+    var b = document.getElementById('themeToggle');
+    if(!b) return;
+    function cur(){ return document.documentElement.getAttribute('data-theme') || 'dark'; }
+    function paint(){
+      var t = cur();
+      b.textContent = (t === 'light') ? '☾' : '☀';
+      b.setAttribute('aria-label', t === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+    }
+    paint();
+    b.addEventListener('click', function(){
+      var next = cur() === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try{ localStorage.setItem('iset-theme', next); }catch(e){}
+      paint();
+    });
+  })();
+</script>
 
 <script>
   // ====== BOOT ======
