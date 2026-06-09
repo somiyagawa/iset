@@ -351,8 +351,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ================= DATE HALO ================= */
   .date-halo{
-    position:relative;align-self:flex-start;isolation:isolate;
-    display:flex;align-items:center;gap:26px;margin:6px 0;padding:6px 10px 6px 0;
+    position:absolute;top:108px;right:54px;z-index:4;isolation:isolate;
+    display:flex;align-items:center;gap:26px;padding:6px 10px 6px 0;
   }
   .date-halo::before{
     content:"";position:absolute;z-index:-2;
@@ -399,6 +399,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-family:'JetBrains Mono',monospace;font-size:0.78rem;
     text-transform:uppercase;letter-spacing:0.3em;color:var(--cyan);
     text-shadow:0 0 10px rgba(0,229,255,0.5);
+  }
+  @media (max-width:1080px){
+    .date-halo{position:static;right:auto;top:auto;align-self:flex-start;margin:6px 0}
   }
   @media (max-width:760px){
     .date-halo{gap:18px}
