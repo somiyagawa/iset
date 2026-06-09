@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The 2nd International Symposium of Egyptology in Tokyo (ISET 2026) · 16 July 2026</title>
+<meta name="description" content="The 2nd International Symposium of Egyptology in Tokyo/Tsukuba (ISET 2026). 16 July 2026, University of Tsukuba, Tokyo Campus." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#06070a;
+    --ink-2:#0c0e13;
+    --ink-3:#13161d;
+    --ink-4:#1c2029;
+    --bone:#eef2f7;
+    --bone-2:#b8c0cc;
+    --bone-3:#7a8395;
+    --muted:#4a5160;
+    --amber:#e5a23a;
+    --amber-deep:#b97a1c;
+    --sienna:#ff5a2e;
+    --cyan:#00e5ff;
+    --cyan-deep:#0091a8;
+    --jade:#3aff9e;
+    --magenta:#ff2d75;
+    --line:rgba(238,242,247,0.07);
+    --line-2:rgba(238,242,247,0.14);
+    --grid:rgba(0,229,255,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--bone);overflow-x:hidden}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Space Grotesk',-apple-system,sans-serif;
+    font-weight:400;font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    position:relative;cursor:none;
+  }
+  /* Background dot grid */
+  body{
+    background-image:
+      radial-gradient(circle, rgba(238,242,247,0.04) 1px, transparent 1px);
+    background-size:24px 24px;
+  }
+  /* Film grain */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:300;
+    opacity:0.13;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  /* Scanlines */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:299;
+    background:repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,0.10) 3px 4px);
+    mix-blend-mode:multiply;
+  }
+  ::selection{background:var(--cyan);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;background:none;border:none;color:inherit;cursor:none}
+
+  /* ================= CUSTOM CROSSHAIR CURSOR ================= */
+  .cursor{
+    position:fixed;left:0;top:0;width:6px;height:6px;
+    background:var(--cyan);border-radius:50%;
+    pointer-events:none;z-index:9999;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 12px var(--cyan),0 0 24px rgba(0,229,255,0.4);
+    transition:transform .08s ease-out;
+    mix-blend-mode:screen;
+  }
+  .cursor-cross{
+    position:fixed;left:0;top:0;
+    width:60px;height:60px;
+    pointer-events:none;z-index:9998;
+    transform:translate(-50%,-50%);
+    transition:transform .25s cubic-bezier(.2,.7,.2,1), width .3s, height .3s, opacity .3s;
+  }
+  .cursor-cross::before,.cursor-cross::after{
+    content:"";position:absolute;background:rgba(0,229,255,0.5);
+  }
+  .cursor-cross::before{left:50%;top:0;width:1px;height:18px;transform:translateX(-50%)}
+  .cursor-cross::after{top:50%;left:0;height:1px;width:18px;transform:translateY(-50%)}
+  .cursor-cross .b{
+    position:absolute;width:6px;height:6px;border:1px solid rgba(0,229,255,0.6);
+  }
+  .cursor-cross .b.tl{top:0;left:0;border-right:none;border-bottom:none}
+  .cursor-cross .b.tr{top:0;right:0;border-left:none;border-bottom:none}
+  .cursor-cross .b.bl{bottom:0;left:0;border-right:none;border-top:none}
+  .cursor-cross .b.br{bottom:0;right:0;border-left:none;border-top:none}
+  @media (max-width:760px){body{cursor:auto}.cursor,.cursor-cross{display:none}}
+
+  /* ================= BOOT OVERLAY ================= */
+  .boot{
+    position:fixed;inset:0;background:var(--ink);z-index:1000;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    font-family:'JetBrains Mono',monospace;
+    transition:opacity .6s ease, visibility .6s ease;
+  }
+  .boot.done{opacity:0;visibility:hidden;pointer-events:none}
+  .boot .lines{font-size:0.78rem;color:var(--cyan);text-align:left;line-height:1.9;letter-spacing:0.06em;min-width:320px}
+  .boot .lines .ok{color:var(--jade)}
+  .boot .lines .em{color:var(--amber)}
+  .boot .blink{animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .boot .bar{
+    margin-top:24px;width:320px;height:2px;background:var(--ink-4);position:relative;overflow:hidden;
+  }
+  .boot .bar::after{
+    content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cyan),var(--amber));
+    transform:translateX(-100%);animation:fill 2s cubic-bezier(.5,0,.5,1) forwards;
+  }
+  @keyframes fill{to{transform:translateX(0)}}
+
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:0.04em}
+  .serif{font-family:'Fraunces',serif}
+  .jp{font-family:'Noto Serif JP',serif}
+  .uppercase{text-transform:uppercase;letter-spacing:0.18em}
+
+  /* ================= HUD ================= */
+  .hud{
+    position:fixed;left:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px;
+    font-family:'JetBrains Mono',monospace;font-size:0.62rem;
+    color:var(--bone-3);letter-spacing:0.14em;text-transform:uppercase;
+    padding:18px 12px;border:1px solid var(--line);
+    background:rgba(6,7,10,0.5);backdrop-filter:blur(8px);
+  }
+  .hud .h-item{display:flex;flex-direction:column;gap:4px;min-width:96px}
+  .hud .h-item .k{color:var(--muted);font-size:0.58rem}
+  .hud .h-item .v{color:var(--cyan);font-size:0.7rem;letter-spacing:0.06em}
+  .hud .h-item.live .v::before{
+    content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:var(--jade);margin-right:6px;vertical-align:middle;
+    box-shadow:0 0 8px var(--jade);animation:pulse 1.4s infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+  @media (max-width:1100px){.hud{display:none}}
+
+  /* ================= TOP NAV ================= */
+  nav.top{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 32px;
+    background:linear-gradient(180deg, rgba(6,7,10,0.85), rgba(6,7,10,0));
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.top .mark{
+    font-family:'JetBrains Mono',monospace;font-weight:500;
+    font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;color:var(--bone);
+  }
+  nav.top .mark .led{
+    width:8px;height:8px;background:var(--jade);border-radius:50%;
+    box-shadow:0 0 12px var(--jade);animation:pulse 2s infinite;
+  }
+  nav.top .mark .slash{color:var(--cyan)}
+  nav.top ul{
+    list-style:none;display:flex;gap:22px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;text-transform:uppercase;letter-spacing:0.16em;
+  }
+  nav.top ul a{position:relative;padding:6px 2px;color:var(--bone-2);transition:color .2s}
+  nav.top ul a .n{color:var(--cyan);font-size:0.6rem;margin-right:6px}
+  nav.top ul a:hover{color:var(--cyan)}
+  nav.top ul a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+    background:var(--cyan);transition:width .3s ease;box-shadow:0 0 4px var(--cyan);
+  }
+  nav.top ul a:hover::after{width:100%}
+  @media (max-width:980px){nav.top ul{display:none}}
+
+  /* ================= HERO ================= */
+  .hero{
+    min-height:100vh;position:relative;
+    padding:120px 36px 80px;
+    display:flex;flex-direction:column;
+    overflow:hidden;
+  }
+  #netCanvas{
+    position:absolute;inset:0;width:100%;height:100%;
+    z-index:0;opacity:0.75;
+  }
+  .hero::before{
+    content:"";position:absolute;
+    width:100vmin;height:100vmin;
+    right:-25vmin;top:-15vmin;
+    background:radial-gradient(circle, rgba(0,229,255,0.18), rgba(229,162,58,0.10) 35%, transparent 65%);
+    filter:blur(60px);z-index:0;
+    animation:float 18s ease-in-out infinite;
+  }
+  .hero::after{
+    content:"";position:absolute;
+    width:80vmin;height:80vmin;
+    left:-20vmin;bottom:-25vmin;
+    background:radial-gradient(circle, rgba(255,90,46,0.20), transparent 60%);
+    filter:blur(50px);z-index:0;
+    animation:float 22s ease-in-out -6s infinite reverse;
+  }
+  @keyframes float{
+    0%,100%{transform:translate(0,0) scale(1)}
+    50%{transform:translate(40px,-30px) scale(1.08)}
+  }
+
+  .hero-frame{
+    position:absolute;inset:96px 32px 60px;
+    border:1px solid var(--line-2);
+    pointer-events:none;z-index:1;
+  }
+  .hero-frame::before,.hero-frame::after,
+  .hero-frame .ctr-tl,.hero-frame .ctr-tr,.hero-frame .ctr-bl,.hero-frame .ctr-br{
+    content:"";position:absolute;width:14px;height:14px;
+  }
+  .hero-frame .ctr-tl{top:-1px;left:-1px;border-top:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+  .hero-frame .ctr-tr{top:-1px;right:-1px;border-top:2px solid var(--cyan);border-right:2px solid var(--cyan)}
+  .hero-frame .ctr-bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+  .hero-frame .ctr-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--cyan);border-right:2px solid var(--cyan)}
+
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1fr;gap:36px;flex:1;
+    padding:0 30px;
+  }
+  .hero-main{display:flex;flex-direction:column;gap:36px;justify-content:space-between}
+
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.66rem;text-transform:uppercase;letter-spacing:0.18em;}
+  .badge{
+    border:1px solid var(--line-2);padding:6px 12px;
+    color:var(--bone-2);
+    background:rgba(6,7,10,0.6);backdrop-filter:blur(4px);
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .badge .b-dot{
+    display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--cyan);box-shadow:0 0 6px var(--cyan);
+  }
+  .badge.solid{
+    background:var(--cyan);border-color:var(--cyan);
+    color:var(--ink);font-weight:600;
+    box-shadow:0 0 12px rgba(0,229,255,0.4);
+  }
+  .badge.solid .b-dot{background:var(--ink);box-shadow:none}
+  .badge.amber{border-color:var(--amber);color:var(--amber)}
+  .badge.amber .b-dot{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+
+  .pre-title{
+    font-family:'JetBrains Mono',monospace;font-size:0.74rem;
+    color:var(--cyan);letter-spacing:0.2em;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;
+  }
+  .pre-title .car{color:var(--bone-3)}
+
+  .display{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(4rem, 15vw, 16rem);
+    line-height:0.84;letter-spacing:-0.04em;color:var(--bone);
+    position:relative;
+  }
+  .display .stack{display:block;position:relative}
+  .display .ital{font-style:italic;font-weight:300;color:var(--amber);font-variation-settings:"SOFT" 100;}
+  .display .outline{-webkit-text-stroke:1.5px var(--bone);color:transparent;font-weight:700}
+  .display .neon{color:var(--cyan);text-shadow:0 0 12px rgba(0,229,255,0.5)}
+  .display .mark::after{content:"·";color:var(--sienna);position:relative;top:-0.12em;margin:0 0.02em}
+
+  /* Glitch effect */
+  .glitch{
+    position:relative;display:inline-block;
+  }
+  .glitch::before,.glitch::after{
+    content:attr(data-text);position:absolute;left:0;top:0;width:100%;height:100%;
+    pointer-events:none;
+  }
+  .glitch::before{
+    color:var(--cyan);transform:translate(-2px,0);
+    clip-path:inset(0 0 60% 0);
+    animation:glitchA 4s infinite steps(1);
+    mix-blend-mode:screen;opacity:0.7;
+  }
+  .glitch::after{
+    color:var(--sienna);transform:translate(2px,0);
+    clip-path:inset(60% 0 0 0);
+    animation:glitchB 4s infinite steps(1);
+    mix-blend-mode:screen;opacity:0.7;
+  }
+  @keyframes glitchA{
+    0%,90%,100%{transform:translate(0,0);opacity:0}
+    91%{transform:translate(-3px,1px);opacity:0.9}
+    92%{transform:translate(2px,-1px);opacity:0.6}
+    93%{transform:translate(-1px,2px);opacity:0.9}
+    94%{transform:translate(0,0);opacity:0}
+  }
+  @keyframes glitchB{
+    0%,90%,100%{transform:translate(0,0);opacity:0}
+    91%{transform:translate(3px,-1px);opacity:0.9}
+    92%{transform:translate(-2px,1px);opacity:0.6}
+    93%{transform:translate(1px,-2px);opacity:0.9}
+    94%{transform:translate(0,0);opacity:0}
+  }
+
+  .official-name{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;
+    font-size:clamp(1.15rem, 2.4vw, 2rem);
+    line-height:1.18;letter-spacing:-0.005em;color:var(--bone);max-width:900px;
+  }
+  .official-name .abbr{color:var(--cyan)}
+  .official-jp{
+    font-family:'Noto Serif JP',serif;font-weight:600;
+    font-size:clamp(0.95rem, 1.8vw, 1.4rem);
+    color:var(--bone-2);letter-spacing:0.04em;margin-top:6px;
+  }
+  .cre-link{
+    display:inline-flex;align-items:center;gap:12px;align-self:flex-start;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;font-size:0.74rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:0.14em;
+    color:var(--amber);background:rgba(229,162,58,0.08);
+    border:1px solid var(--amber);padding:11px 18px;
+    transition:background .2s ease, color .2s ease;
+  }
+  .cre-link:hover{background:var(--amber);color:var(--ink)}
+  .cre-link .arr{color:var(--amber-deep);font-weight:700}
+  .cre-link:hover .arr{color:var(--ink)}
+  .cre-link .big{
+    font-size:clamp(0.86rem,1.5vw,1.05rem);font-weight:700;letter-spacing:0.16em;
+    color:var(--bone);
+  }
+  .cre-link:hover .big{color:var(--ink)}
+  .cre-link .big::before{content:"➜ ";color:var(--amber)}
+  .cre-link:hover .big::before{color:var(--ink)}
+  .cre-link .div{opacity:0.5}
+  .about-grid .body p a.cre,
+  .foot-row a.cre{color:var(--amber);border-bottom:1px solid var(--amber);transition:color .2s}
+  .about-grid .body p a.cre:hover,.foot-row a.cre:hover{color:var(--sienna);border-color:var(--sienna)}
+  .subtitle{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.05rem, 1.8vw, 1.55rem);
+    color:var(--bone-2);max-width:700px;line-height:1.35;
+  }
+
+  /* ================= REGISTER BUTTON ================= */
+  @keyframes btnGlow{
+    0%,100%{box-shadow:0 0 16px rgba(0,229,255,0.55), 0 0 44px rgba(0,229,255,0.28)}
+    50%{box-shadow:0 0 30px rgba(0,229,255,0.9), 0 0 78px rgba(0,229,255,0.5)}
+  }
+  .btn-register{
+    display:inline-flex;align-items:center;gap:14px;align-self:flex-start;
+    font-family:'JetBrains Mono',monospace;font-weight:700;
+    font-size:0.92rem;text-transform:uppercase;letter-spacing:0.2em;
+    color:var(--ink);background:var(--cyan);
+    padding:20px 38px;border:1px solid var(--cyan);
+    position:relative;cursor:none;
+    animation:btnGlow 2.2s ease-in-out infinite;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .btn-register:hover{transform:translateY(-2px) scale(1.025);background:#ffffff;border-color:#fff}
+  .btn-register .led{
+    width:9px;height:9px;border-radius:50%;background:var(--ink);
+    animation:pulse 1.3s infinite;
+  }
+  .btn-register .arrow{font-size:1.2em;transition:transform .2s}
+  .btn-register:hover .arrow{transform:translateX(5px)}
+  .btn-register .sub{
+    font-size:0.62rem;letter-spacing:0.16em;opacity:0.7;font-weight:500;
+    border-left:1px solid rgba(6,7,10,0.35);padding-left:12px;margin-left:2px;
+  }
+  @media (max-width:760px){.btn-register{align-self:stretch;justify-content:center;padding:18px 24px}}
+
+  /* nav register button */
+  .nav-reg{
+    font-family:'JetBrains Mono',monospace;font-weight:700;
+    font-size:0.7rem;text-transform:uppercase;letter-spacing:0.16em;
+    color:var(--ink) !important;background:var(--cyan);
+    padding:10px 18px;display:inline-flex;align-items:center;gap:8px;
+    animation:btnGlow 2.2s ease-in-out infinite;
+    transition:transform .2s ease, background .2s ease;white-space:nowrap;
+  }
+  .nav-reg:hover{transform:scale(1.04);background:#fff}
+  .nav-reg .led{width:7px;height:7px;border-radius:50%;background:var(--ink);animation:pulse 1.3s infinite}
+
+  /* floating register button */
+  .float-reg{
+    position:fixed;right:24px;bottom:24px;z-index:200;
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'JetBrains Mono',monospace;font-weight:700;
+    font-size:0.74rem;text-transform:uppercase;letter-spacing:0.16em;
+    color:var(--ink);background:var(--cyan);
+    padding:14px 22px;border:1px solid var(--cyan);
+    animation:btnGlow 2.2s ease-in-out infinite;
+    transition:transform .2s ease, background .2s ease;cursor:none;
+  }
+  .float-reg:hover{transform:translateY(-3px) scale(1.04);background:#fff}
+  .float-reg .led{width:8px;height:8px;border-radius:50%;background:var(--ink);animation:pulse 1.3s infinite}
+  @media (max-width:760px){
+    .float-reg{right:14px;bottom:14px;padding:12px 18px;font-size:0.68rem}
+  }
+  .subtitle .sep{color:var(--cyan);font-style:normal;margin:0 8px}
+
+  .hero-meta{
+    display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:1px;
+    padding-top:24px;border-top:1px solid var(--line-2);
+    background:var(--line);
+  }
+  .meta-cell{
+    background:rgba(6,7,10,0.7);backdrop-filter:blur(4px);
+    padding:18px 20px;display:flex;flex-direction:column;gap:6px;
+    position:relative;
+  }
+  .meta-cell::before{
+    content:attr(data-i);position:absolute;top:8px;right:10px;
+    font-family:'JetBrains Mono',monospace;font-size:0.58rem;
+    color:var(--muted);letter-spacing:0.1em;
+  }
+  .meta-cell .k{
+    font-family:'JetBrains Mono',monospace;font-size:0.62rem;
+    text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);
+  }
+  .meta-cell .v{
+    font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;
+    color:var(--bone);letter-spacing:0.005em;
+  }
+  .meta-cell .hex{
+    font-family:'JetBrains Mono',monospace;font-size:0.6rem;
+    color:var(--muted);letter-spacing:0.06em;margin-top:2px;
+  }
+  @media (max-width:760px){
+    .hero-grid{padding:0}
+    .hero-meta{grid-template-columns:repeat(2,1fr)}
+    .hero-frame{display:none}
+  }
+
+  /* Scroll cue */
+  .scroll-cue{
+    position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+    font-family:'JetBrains Mono',monospace;font-size:0.64rem;
+    text-transform:uppercase;letter-spacing:0.32em;color:var(--cyan);
+    display:flex;flex-direction:column;align-items:center;gap:10px;z-index:3;
+  }
+  .scroll-cue .line{
+    width:1px;height:38px;background:linear-gradient(180deg, transparent, var(--cyan));
+    animation:scrollLine 2.2s ease-in-out infinite;
+    box-shadow:0 0 4px var(--cyan);
+  }
+  @keyframes scrollLine{
+    0%{transform:scaleY(0);transform-origin:top}
+    50%{transform:scaleY(1);transform-origin:top}
+    51%{transform:scaleY(1);transform-origin:bottom}
+    100%{transform:scaleY(0);transform-origin:bottom}
+  }
+
+  /* ================= MARQUEE / TICKER ================= */
+  .marquee{
+    border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
+    background:var(--ink-2);overflow:hidden;padding:16px 0;position:relative;
+  }
+  .marquee::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:120px;
+    background:linear-gradient(90deg,var(--ink-2),transparent);z-index:2;
+  }
+  .marquee::after{
+    content:"";position:absolute;right:0;top:0;bottom:0;width:120px;
+    background:linear-gradient(-90deg,var(--ink-2),transparent);z-index:2;
+  }
+  .marquee-track{
+    display:flex;gap:50px;white-space:nowrap;
+    animation:scroll 42s linear infinite;
+    font-family:'JetBrains Mono',monospace;font-size:0.85rem;
+    color:var(--bone-2);letter-spacing:0.06em;
+  }
+  .marquee-track span{display:inline-flex;align-items:center;gap:50px}
+  .marquee-track .sep{color:var(--cyan)}
+  .marquee-track .tok{
+    padding:4px 10px;border:1px solid var(--line-2);
+    background:var(--ink-3);
+  }
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ================= SECTION BASE ================= */
+  section{padding:140px 36px;position:relative}
+  .container{max-width:1280px;margin:0 auto}
+
+  .sec-head{
+    display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:end;
+    margin-bottom:80px;border-bottom:1px solid var(--line-2);padding-bottom:32px;
+    position:relative;
+  }
+  .sec-head::before{
+    content:"";position:absolute;left:0;bottom:-1px;width:120px;height:1px;
+    background:var(--cyan);box-shadow:0 0 8px var(--cyan);
+  }
+  .sec-head .num{
+    font-family:'JetBrains Mono',monospace;font-size:0.74rem;
+    color:var(--cyan);letter-spacing:0.16em;white-space:nowrap;
+    display:flex;align-items:center;gap:8px;
+  }
+  .sec-head .num::before{
+    content:">";color:var(--bone-3);
+  }
+  .sec-head h2{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(2.4rem, 5.5vw, 4.4rem);line-height:1;letter-spacing:-0.025em;
+  }
+  .sec-head h2 em{font-style:italic;color:var(--amber);font-weight:300}
+  .sec-head h2 .cy{color:var(--cyan);font-style:italic}
+  .sec-head .jp-sub{
+    grid-column:2;display:flex;gap:14px;margin-top:14px;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    color:var(--bone-3);letter-spacing:0.08em;
+  }
+  .sec-head .jp-sub .jp-t{font-family:'Noto Serif JP',serif;color:var(--bone-2);font-size:0.84rem}
+  .sec-head .jp-sub .hash{color:var(--cyan)}
+  @media (max-width:680px){
+    .sec-head{grid-template-columns:1fr;gap:14px}
+    .sec-head .jp-sub{grid-column:1}
+  }
+
+  /* ================= ABOUT ================= */
+  .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+  .about-grid .lead{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(1.4rem, 2.6vw, 2.05rem);
+    line-height:1.25;color:var(--bone);letter-spacing:-0.01em;
+    border-left:1px solid var(--cyan);padding-left:24px;
+  }
+  .about-grid .lead em{font-style:italic;color:var(--amber)}
+  .about-grid .lead .cy{color:var(--cyan);font-style:italic}
+  .about-grid .body p{font-size:1.02rem;color:var(--bone-2);margin-bottom:18px;max-width:56ch}
+  .about-grid .body p strong{color:var(--bone);font-weight:600}
+  .about-grid .body p .term{
+    font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:0.92em;
+    background:rgba(0,229,255,0.06);padding:1px 6px;border-radius:2px;
+    border:1px solid rgba(0,229,255,0.2);
+  }
+  @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* ================= PROGRAM / EXECUTION LOG ================= */
+  #program{background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%)}
+  .log-header{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    color:var(--bone-3);letter-spacing:0.14em;text-transform:uppercase;
+    padding:14px 22px;background:var(--ink-3);
+    border:1px solid var(--line-2);border-bottom:none;
+  }
+  .log-header .l-dot{color:var(--jade);margin-right:6px}
+  .log-header .right{color:var(--cyan);font-size:0.65rem}
+  .timeline{display:flex;flex-direction:column;border:1px solid var(--line-2)}
+  .row{
+    display:grid;grid-template-columns:46px 160px 1fr auto;gap:24px;
+    padding:22px 22px;border-top:1px solid var(--line);align-items:baseline;
+    transition:background .25s ease;position:relative;
+  }
+  .row:first-child{border-top:none}
+  .row:hover{background:rgba(0,229,255,0.04)}
+  .row .idx{
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;
+    color:var(--bone-3);letter-spacing:0.08em;padding-top:8px;
+  }
+  .row .time{
+    font-family:'JetBrains Mono',monospace;font-size:0.85rem;
+    color:var(--cyan);letter-spacing:0.04em;padding-top:8px;
+  }
+  .row .who{
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:clamp(1.4rem, 2.4vw, 2.1rem);
+    line-height:1.1;letter-spacing:-0.015em;color:var(--bone);
+  }
+  .row .who .sub{
+    display:block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);
+    margin-top:8px;font-weight:400;
+  }
+  .row .who .chair{
+    display:inline-block;margin-left:14px;
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.18em;
+    color:var(--cyan);vertical-align:middle;
+    border-left:1px solid var(--line-2);padding-left:14px;
+  }
+  .row .tag{
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.14em;color:var(--bone-2);
+    padding:5px 12px;border:1px solid var(--line-2);white-space:nowrap;
+    background:var(--ink-3);
+  }
+  .row.ceremony .who{color:var(--cyan)}
+  .row.ceremony .tag{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 8px rgba(0,229,255,0.3)}
+  .row.break{opacity:0.45}
+  .row.break .who{font-style:italic;font-size:1.1rem;color:var(--bone-2);font-weight:300}
+  .row.break .tag{display:none}
+  @media (max-width:760px){
+    .row{grid-template-columns:1fr;gap:8px;padding:22px}
+    .row .tag{justify-self:start;margin-top:6px}
+    .row .who .chair{display:block;margin:8px 0 0;border-left:none;padding-left:0}
+  }
+
+  /* ================= SPEAKERS / TOKENS ================= */
+  #speakers{background:var(--ink-2)}
+  .sp-meta{
+    display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    color:var(--bone-3);letter-spacing:0.1em;text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .sp-meta .seg{display:flex;gap:8px;align-items:center}
+  .sp-meta .seg .lbl{color:var(--muted)}
+  .sp-meta .seg .v{color:var(--cyan)}
+
+  .speakers{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line-2);border:1px solid var(--line-2);
+  }
+  .sp{
+    background:var(--ink-2);padding:32px 26px;min-height:300px;
+    display:flex;flex-direction:column;justify-content:flex-start;gap:14px;
+    transition:background .3s ease;position:relative;overflow:hidden;
+  }
+  .sp .aff{
+    font-family:'JetBrains Mono',monospace;font-size:0.64rem;
+    text-transform:uppercase;letter-spacing:0.12em;color:var(--amber);
+    line-height:1.4;
+  }
+  .sp .paper{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    font-size:0.96rem;line-height:1.35;color:var(--bone-2);
+  }
+  .sp .tag-row{margin-top:auto}
+  .sp::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(0,229,255,0.10), transparent 50%);
+    opacity:0;transition:opacity .3s;
+  }
+  .sp:hover::before{opacity:1}
+  .sp > *{position:relative;z-index:1}
+  .sp .top-row{display:flex;justify-content:space-between;align-items:flex-start}
+  .sp .num{
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;
+    color:var(--cyan);letter-spacing:0.18em;
+  }
+  .sp .num .pre{color:var(--bone-3)}
+  .sp .vec{
+    font-family:'JetBrains Mono',monospace;font-size:0.58rem;
+    color:var(--muted);letter-spacing:0.08em;text-align:right;
+    line-height:1.4;
+  }
+  .sp .name{
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:1.55rem;line-height:1.1;letter-spacing:-0.01em;color:var(--bone);
+  }
+  .sp .name::before{
+    content:"⟨ ";color:var(--cyan);font-size:0.7em;
+  }
+  .sp .name::after{
+    content:" ⟩";color:var(--cyan);font-size:0.7em;
+  }
+  .sp .tag-row{
+    display:flex;gap:6px;flex-wrap:wrap;
+  }
+  .sp .tag2{
+    font-family:'JetBrains Mono',monospace;font-size:0.62rem;
+    text-transform:uppercase;letter-spacing:0.14em;color:var(--bone-3);
+    padding:3px 8px;border:1px solid var(--line-2);
+  }
+  .sp .tag2.live{color:var(--jade);border-color:var(--jade)}
+  .sp .tag2.live::before{
+    content:"";display:inline-block;width:4px;height:4px;border-radius:50%;
+    background:var(--jade);margin-right:5px;vertical-align:middle;
+    box-shadow:0 0 4px var(--jade);
+  }
+  @media (max-width:980px){.speakers{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.speakers{grid-template-columns:1fr}}
+
+  /* ================= VENUE / TOUR ================= */
+  #venue{background:var(--ink)}
+  .vt-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line-2);border:1px solid var(--line-2);
+  }
+  .vt-cell{
+    background:var(--ink);padding:48px 40px;display:flex;flex-direction:column;gap:18px;
+    min-height:380px;position:relative;overflow:hidden;
+  }
+  .vt-cell .label{
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);
+    display:flex;align-items:center;gap:8px;
+  }
+  .vt-cell .label::before{content:">";color:var(--bone-3)}
+  .vt-cell h3{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1.05;letter-spacing:-0.02em;
+  }
+  .vt-cell h3 em{font-style:italic;color:var(--cyan)}
+  .vt-cell p{color:var(--bone-2);max-width:52ch}
+  .vt-cell .pin{
+    position:absolute;top:20px;right:20px;
+    font-family:'JetBrains Mono',monospace;font-size:0.66rem;
+    color:var(--muted);letter-spacing:0.14em;
+    padding:4px 8px;border:1px solid var(--line);
+  }
+  .vt-cell .when{
+    margin-top:auto;padding-top:18px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:0.78rem;
+    color:var(--bone-2);letter-spacing:0.08em;
+  }
+  .vt-cell .when .lbl{color:var(--muted);text-transform:uppercase;letter-spacing:0.18em;font-size:0.62rem}
+  .vt-cell .when .val{color:var(--cyan)}
+  .vt-cell.optional .label{color:var(--sienna)}
+  .vt-cell.optional h3 em{color:var(--sienna)}
+  .vt-cell.optional .when .val{color:var(--sienna)}
+  @media (max-width:760px){.vt-grid{grid-template-columns:1fr}}
+  .vt-cell.photo{background-size:cover;background-position:center}
+  .vt-cell.photo > *{position:relative;z-index:1}
+
+  /* campus / city gallery */
+  .gallery-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin:64px 0 18px;padding-bottom:14px;border-bottom:1px solid var(--line-2);
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.16em;color:var(--bone-3);
+  }
+  .gallery-head .lbl{color:var(--cyan)}
+  .gallery-head .lbl::before{content:">";color:var(--bone-3);margin-right:8px}
+  .gallery-head .jp-t{font-family:'Noto Serif JP',serif;color:var(--bone-2);letter-spacing:0.04em}
+  .gallery{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line-2);border:1px solid var(--line-2);
+  }
+  .gallery figure{
+    position:relative;overflow:hidden;background:var(--ink-2);
+    aspect-ratio:4/3;margin:0;
+  }
+  .gallery img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:saturate(0.9) contrast(1.02);
+    transition:transform .5s cubic-bezier(.2,.7,.2,1), filter .4s;
+  }
+  .gallery figure:hover img{transform:scale(1.06);filter:saturate(1.1) contrast(1.05)}
+  .gallery figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:18px 12px 8px;
+    font-family:'JetBrains Mono',monospace;font-size:0.58rem;
+    text-transform:uppercase;letter-spacing:0.14em;color:var(--bone);
+    background:linear-gradient(0deg, rgba(6,7,10,0.85), transparent);
+    opacity:0;transition:opacity .3s;
+  }
+  .gallery figure:hover figcaption{opacity:1}
+  @media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+  /* venue map */
+  .map-frame{
+    position:relative;border:1px solid var(--line-2);overflow:hidden;
+    background:var(--ink-2);
+  }
+  .map-frame iframe{
+    width:100%;height:440px;border:0;display:block;
+    filter:invert(0.91) hue-rotate(180deg) contrast(0.92) saturate(0.85) brightness(0.95);
+    transition:filter .4s ease;
+  }
+  .map-frame:hover iframe{filter:none}
+  .map-frame .ctr-tl,.map-frame .ctr-tr,.map-frame .ctr-bl,.map-frame .ctr-br{
+    position:absolute;width:14px;height:14px;z-index:2;pointer-events:none;
+  }
+  .map-frame .ctr-tl{top:-1px;left:-1px;border-top:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+  .map-frame .ctr-tr{top:-1px;right:-1px;border-top:2px solid var(--cyan);border-right:2px solid var(--cyan)}
+  .map-frame .ctr-bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+  .map-frame .ctr-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--cyan);border-right:2px solid var(--cyan)}
+  .map-frame .hint{
+    position:absolute;top:12px;left:12px;z-index:2;pointer-events:none;
+    font-family:'JetBrains Mono',monospace;font-size:0.56rem;
+    text-transform:uppercase;letter-spacing:0.14em;color:var(--bone-3);
+    background:rgba(6,7,10,0.6);padding:4px 8px;border:1px solid var(--line);
+  }
+  .map-link{
+    display:inline-flex;align-items:center;gap:10px;margin-top:16px;
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:500;
+    text-transform:uppercase;letter-spacing:0.16em;color:var(--cyan);
+    padding:11px 20px;border:1px solid var(--cyan);
+    transition:background .2s ease, color .2s ease;
+  }
+  .map-link:hover{background:var(--cyan);color:var(--ink)}
+
+  /* ================= VOLUME ================= */
+  #volume{background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%)}
+  .volume-card{
+    border:1px solid var(--line-2);
+    padding:56px 48px;
+    display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;
+    background:radial-gradient(ellipse at left, rgba(0,229,255,0.06), transparent 60%);
+    position:relative;
+  }
+  .volume-card::before{
+    content:"VOL_II.proceedings";position:absolute;top:14px;left:20px;
+    font-family:'JetBrains Mono',monospace;font-size:0.6rem;
+    color:var(--muted);letter-spacing:0.16em;
+  }
+  .volume-card .icon{width:88px;height:88px;flex:none}
+  .volume-card .icon svg{width:100%;height:100%}
+  .volume-card .body h3{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(1.8rem, 3vw, 2.5rem);
+    line-height:1.05;letter-spacing:-0.02em;margin-bottom:14px;
+  }
+  .volume-card .body h3 em{font-style:italic;color:var(--cyan)}
+  .volume-card .body p{color:var(--bone-2);max-width:54ch}
+  .volume-card .body p .jp{display:block;margin-top:8px;color:var(--bone-3);font-size:0.92rem;letter-spacing:0.04em;font-family:'Noto Serif JP',serif}
+  .volume-card .badge-side{
+    display:flex;flex-direction:column;gap:6px;text-align:right;
+    font-family:'JetBrains Mono',monospace;letter-spacing:0.12em;
+  }
+  .volume-card .badge-side .yrs{
+    font-size:2.4rem;color:var(--cyan);font-weight:500;font-family:'Fraunces',serif;
+    text-shadow:0 0 12px rgba(0,229,255,0.4);
+  }
+  .volume-card .badge-side .lbl{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.2em}
+  @media (max-width:860px){
+    .volume-card{grid-template-columns:1fr;gap:24px;text-align:left}
+    .volume-card .badge-side{text-align:left}
+  }
+
+  /* ================= FUNDING ================= */
+  #funding{background:var(--ink-2)}
+  .fund-group{margin-bottom:54px}
+  .fund-group:last-child{margin-bottom:0}
+  .fund-group .group-head{
+    display:grid;grid-template-columns:80px 1fr;gap:24px;
+    border-top:1px solid var(--line-2);padding:24px 0 18px;align-items:baseline;
+  }
+  .fund-group .group-head .gnum{
+    font-family:'JetBrains Mono',monospace;font-size:0.74rem;
+    color:var(--cyan);letter-spacing:0.18em;
+  }
+  .fund-group .group-head h4{
+    font-family:'Fraunces',serif;font-weight:400;font-style:italic;
+    font-size:clamp(1.3rem, 2vw, 1.8rem);color:var(--bone);
+    letter-spacing:-0.01em;line-height:1.2;
+  }
+  .fund-group .group-head h4 .en{
+    display:block;font-style:normal;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.22em;color:var(--bone-3);
+    font-family:'JetBrains Mono',monospace;margin-top:6px;
+  }
+
+  .grants{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--line-2);border:1px solid var(--line-2);
+    margin-top:14px;
+  }
+  .grant{
+    background:var(--ink-2);padding:28px 24px;
+    display:flex;flex-direction:column;gap:14px;
+    position:relative;transition:background .3s ease;
+  }
+  .grant::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+    background:var(--cyan);transform:scaleY(0);transform-origin:top;
+    transition:transform .35s ease;
+    box-shadow:0 0 8px var(--cyan);
+  }
+  .grant:hover::before{transform:scaleY(1)}
+  .grant:hover{background:var(--ink-3)}
+  .grant .gid{
+    font-family:'JetBrains Mono',monospace;font-size:0.78rem;
+    color:var(--cyan);letter-spacing:0.12em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .grant .gid::before{
+    content:"";width:6px;height:6px;background:var(--cyan);display:inline-block;
+    box-shadow:0 0 6px var(--cyan);
+  }
+  .grant .gtitle{
+    font-family:'Noto Serif JP',serif;font-weight:400;font-size:1.02rem;
+    color:var(--bone);line-height:1.5;letter-spacing:0.01em;
+  }
+  .grant .gtitle-en{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    font-size:0.92rem;color:var(--bone-2);line-height:1.4;margin-top:6px;
+  }
+  .grant .gmeta{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px;
+    border-top:1px solid var(--line);
+  }
+  .grant .gmeta .chip{
+    font-family:'JetBrains Mono',monospace;font-size:0.62rem;
+    text-transform:uppercase;letter-spacing:0.14em;
+    padding:3px 10px;border:1px solid var(--line-2);color:var(--bone-2);
+  }
+  .grant .gmeta .chip.pi{border-color:var(--cyan);color:var(--cyan)}
+  .grant .gmeta .chip.cat{color:var(--bone-3)}
+  @media (max-width:760px){.grants{grid-template-columns:1fr}}
+
+  /* ================= FOOTER ================= */
+  footer{
+    padding:80px 36px 36px;background:var(--ink);
+    border-top:1px solid var(--line-2);position:relative;overflow:hidden;
+  }
+  footer::before{
+    content:"";position:absolute;
+    width:80vmin;height:80vmin;
+    left:-20vmin;bottom:-30vmin;
+    background:radial-gradient(circle, rgba(0,229,255,0.10), transparent 60%);
+    filter:blur(50px);pointer-events:none;
+  }
+  .foot-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+  .foot-big{
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+    font-size:clamp(2.6rem, 8vw, 7rem);line-height:0.95;letter-spacing:-0.025em;
+    color:var(--bone);margin-bottom:60px;
+  }
+  .foot-big .accent{color:var(--cyan);font-style:normal;font-weight:600;
+    text-shadow:0 0 16px rgba(0,229,255,0.5)}
+  .foot-big .amb{color:var(--amber);font-style:italic}
+  .foot-row{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;
+    border-top:1px solid var(--line);padding-top:24px;
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);
+  }
+  .foot-row .roman{color:var(--cyan)}
+  .foot-row .end{color:var(--jade);display:flex;align-items:center;gap:8px}
+  .foot-row .end::before{
+    content:"";width:6px;height:6px;border-radius:50%;background:var(--jade);
+    box-shadow:0 0 6px var(--jade);animation:pulse 1.4s infinite;
+  }
+</style>
+</head>
+<body>
+
+<!-- BOOT SEQUENCE -->
+<div class="boot" id="boot">
+  <div class="lines">
+    <div>&gt; init <span class="em">ISET·26</span> <span class="ok">[OK]</span></div>
+    <div>&gt; loading model: <span class="em">egyptology.v2</span> <span class="ok">[OK]</span></div>
+    <div>&gt; tokens: <span class="ok">11 papers</span> · <span class="ok">12 speakers</span></div>
+    <div>&gt; venue: <span class="ok">U. Tsukuba / Tokyo · Rm 120</span></div>
+    <div>&gt; entering symposium space<span class="blink">_</span></div>
+  </div>
+  <div class="bar"></div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-cross" id="cursorCross">
+  <span class="b tl"></span><span class="b tr"></span>
+  <span class="b bl"></span><span class="b br"></span>
+</div>
+
+<!-- HUD -->
+<aside class="hud">
+  <div class="h-item live">
+    <span class="k">// SYS · STATUS</span>
+    <span class="v">ONLINE</span>
+  </div>
+  <div class="h-item">
+    <span class="k">// TIME · JST</span>
+    <span class="v" id="hudClock">00:00:00</span>
+  </div>
+  <div class="h-item">
+    <span class="k">// EDITION</span>
+    <span class="v">VOL · 02</span>
+  </div>
+  <div class="h-item">
+    <span class="k">// COORD</span>
+    <span class="v">35.71°N</span>
+  </div>
+  <div class="h-item">
+    <span class="k">// LANG</span>
+    <span class="v">EN / JP</span>
+  </div>
+</aside>
+
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <a class="mark" href="#top">
+    <span class="led"></span>
+    ISET<span class="slash">/</span>26<span class="slash">·</span>SYS
+  </a>
+  <ul>
+    <li><a href="#about"><span class="n">01</span>index</a></li>
+    <li><a href="#program"><span class="n">02</span>program</a></li>
+    <li><a href="#speakers"><span class="n">03</span>speakers</a></li>
+    <li><a href="#venue"><span class="n">04</span>venue</a></li>
+    <li><a href="#volume"><span class="n">05</span>volume</a></li>
+    <li><a href="#funding"><span class="n">06</span>funding</a></li>
+  </ul>
+  <a class="nav-reg" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
+    <span class="led"></span>Register
+  </a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top" style="background:linear-gradient(rgba(6,7,10,0.86),rgba(6,7,10,0.93)),url('images/photo3.jpg') center/cover fixed">
+
+  <!-- Animated neural mesh -->
+  <canvas id="netCanvas"></canvas>
+
+  <!-- HUD frame -->
+  <div class="hero-frame">
+    <span class="ctr-tl"></span><span class="ctr-tr"></span>
+    <span class="ctr-bl"></span><span class="ctr-br"></span>
+  </div>
+
+  <div class="hero-grid">
+
+    <div class="hero-main">
+
+      <div class="pre-title">
+        <span class="car">&gt;</span>
+        <span>2nd Int'l Symposium of Egyptology in Tokyo &nbsp; — &nbsp; 16 July 2026</span>
+      </div>
+
+      <div class="badge-row">
+        <span class="badge solid"><span class="b-dot"></span>VOL · 02 · MMXXVI</span>
+        <span class="badge amber"><span class="b-dot"></span>NEXT DAY AFTER CRE26</span>
+        <span class="badge"><span class="b-dot"></span>SINGLE-DAY</span>
+        <span class="badge"><span class="b-dot"></span>11 PAPERS</span>
+        <span class="badge"><span class="b-dot"></span>EN · JP</span>
+        <span class="badge"><span class="b-dot"></span>HYBRID · ONLINE</span>
+      </div>
+
+      <h1 class="display">
+        <span class="stack">Egypt<span class="ital">ology</span></span>
+        <span class="stack"><span class="outline">in</span> <span class="mark"></span><span class="glitch" data-text="Tokyo">Tokyo</span></span>
+        <span class="stack ital" style="font-size:0.32em;letter-spacing:-0.015em;margin-top:0.1em">/ <span class="neon">Tsukuba</span>.</span>
+      </h1>
+
+      <p class="official-name">The 2nd International Symposium of Egyptology in Tokyo <span class="abbr">(ISET 2026)</span></p>
+      <p class="official-jp">第2回 東京エジプト学国際シンポジウム（ISET 2026）</p>
+
+      <a class="cre-link" href="https://cre26.tokyo/" target="_blank" rel="noopener">
+        <span class="big">The Next Day after CRE26 Tokyo</span>
+        <span class="div">//</span>
+        <span>post-conference symposium</span>
+        <span class="arr">cre26.tokyo →</span>
+      </a>
+
+      <p class="subtitle">A single-day symposium<span class="sep">//</span>16 July 2026 at the University of Tsukuba, Tokyo Campus (Lecture Room 120) — also streamed online.</p>
+
+      <a class="btn-register" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
+        <span class="led"></span>
+        Register Now
+        <span class="arrow">→</span>
+        <span class="sub">Google Form</span>
+      </a>
+
+      <div class="hero-meta">
+        <div class="meta-cell" data-i="01">
+          <span class="k">// EDITION</span>
+          <span class="v">II / 2026</span>
+          <span class="hex">0x02</span>
+        </div>
+        <div class="meta-cell" data-i="02">
+          <span class="k">// DATE</span>
+          <span class="v">16 · 07 · 2026 (Thu)</span>
+          <span class="hex">UTC+09</span>
+        </div>
+        <div class="meta-cell" data-i="03">
+          <span class="k">// HOURS</span>
+          <span class="v">09:00 — 17:00 JST</span>
+          <span class="hex">+ evening excursion</span>
+        </div>
+        <div class="meta-cell" data-i="04">
+          <span class="k">// VENUE</span>
+          <span class="v">U. Tsukuba · Rm 120</span>
+          <span class="hex">Myōgadani · 35.71°N</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="scroll-cue">
+    <span>// SCROLL</span>
+    <span class="line"></span>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>
+      <span class="tok">spk_01 Dr. Azza Ezzat</span> <span class="sep">//</span>
+      <span class="tok">spk_02 Dr. José Manuel Alba Gómez</span> <span class="sep">//</span>
+      <span class="tok">spk_03 Sue Kelly</span> <span class="sep">//</span>
+      <span class="tok">spk_04 Dr. Daniel González León</span> <span class="sep">//</span>
+      <span class="tok">spk_05 Dr. Hazem Farrag</span> <span class="sep">//</span>
+      <span class="tok">spk_06 Dr. Heba Hassan Ahmed Amer</span> <span class="sep">//</span>
+      <span class="tok">spk_07 Walid Elsayed</span> <span class="sep">//</span>
+      <span class="tok">spk_08 Dr. Marwan Kilani</span> <span class="sep">//</span>
+      <span class="tok">spk_09 Prof. Dr. Nesma Ibrahim</span> <span class="sep">//</span>
+      <span class="tok">spk_10 Aziza Abdallah &amp; Hadeer Belal</span> <span class="sep">//</span>
+      <span class="tok">spk_11 Prof. Dr. Magdy Elwan</span> <span class="sep">//</span>
+    </span>
+    <span>
+      <span class="tok">spk_01 Dr. Azza Ezzat</span> <span class="sep">//</span>
+      <span class="tok">spk_02 Dr. José Manuel Alba Gómez</span> <span class="sep">//</span>
+      <span class="tok">spk_03 Sue Kelly</span> <span class="sep">//</span>
+      <span class="tok">spk_04 Dr. Daniel González León</span> <span class="sep">//</span>
+      <span class="tok">spk_05 Dr. Hazem Farrag</span> <span class="sep">//</span>
+      <span class="tok">spk_06 Dr. Heba Hassan Ahmed Amer</span> <span class="sep">//</span>
+      <span class="tok">spk_07 Walid Elsayed</span> <span class="sep">//</span>
+      <span class="tok">spk_08 Dr. Marwan Kilani</span> <span class="sep">//</span>
+      <span class="tok">spk_09 Prof. Dr. Nesma Ibrahim</span> <span class="sep">//</span>
+      <span class="tok">spk_10 Aziza Abdallah &amp; Hadeer Belal</span> <span class="sep">//</span>
+      <span class="tok">spk_11 Prof. Dr. Magdy Elwan</span> <span class="sep">//</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head">
+      <div class="num">§ 01 // INDEX.exec</div>
+      <h2>A single day, <em>eleven papers,</em><br/><span class="cy">one ancient civilisation.</span></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">一日、十一の発表、ひとつの文明。</span></span>
+    </div>
+
+    <div class="about-grid">
+      <p class="lead">The <em>International Symposium of Egyptology in Tokyo / Tsukuba</em> convenes a focused, day-long <span class="cy">forum</span> for scholars working across the disciplines that constitute the study of ancient Egypt.</p>
+      <div class="body">
+        <p><strong>ISET·26 convenes the very next day after <a class="cre" href="https://cre26.tokyo/" target="_blank" rel="noopener">CRE26 Tokyo</a></strong> — the Current Research in Egyptology conference — as its post-conference symposium, so that visiting scholars can extend their stay in Tokyo for a further day of exchange.</p>
+        <p>Following the inaugural edition, <strong>ISET·26</strong> assembles <span class="term">eleven papers</span> delivered by <span class="term">twelve invited scholars</span> from leading institutions for a programme of papers, dialogue, and collegial exchange held in central Tokyo, hosted by the Tokyo Campus of the University of Tsukuba (Lecture Room 120) and streamed online.</p>
+        <p>The symposium foregrounds current <span class="term">fieldwork</span>, <span class="term">philological inquiry</span>, and <span class="term">methodological innovation</span>, spanning <span class="term">ancient</span>, <span class="term">Coptic</span>, and <span class="term">Islamic Egypt</span>, while fostering sustained conversation between researchers based in Japan and the wider international community of Egyptologists.</p>
+        <p>The day closes with an excursion to the <strong>Ancient Egyptian Museum</strong> in Shibuya — a rare site in Japan for the direct study of pharaonic-period artefacts — followed by a night view of the city from the Tokyo Metropolitan Government Building in Shinjuku.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAM ============ -->
+<section id="program">
+  <div class="container">
+    <div class="sec-head">
+      <div class="num">§ 02 // PROGRAM.log</div>
+      <h2>Thursday, <em>16 July 2026.</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">プログラム · 2026年7月16日（木）</span> · 11 papers · 25′ + 5′ Q&amp;A</span>
+    </div>
+
+    <div class="log-header">
+      <div><span class="l-dot">●</span>EXEC // schedule.run</div>
+      <div class="right">[ idx · time · session · format ]</div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="row ceremony">
+        <div class="idx">[00]</div>
+        <div class="time">09:00 — 09:10</div>
+        <div class="who">Opening<span class="chair">CHAIR · Prof. Dr. So Miyagawa · U. Tsukuba</span></div>
+        <div class="tag">Ceremony</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[01]</div>
+        <div class="time">09:10 — 09:40</div>
+        <div class="who">Dr. Azza Ezzat<span class="sub">Bibliotheca Alexandrina · “Ahmed Pasha Kamal and the First Arabic-Based System in Egyptology”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[02]</div>
+        <div class="time">09:40 — 10:10</div>
+        <div class="who">Dr. José Manuel Alba Gómez<span class="sub">University of Jaén · “The Qaw el-Kebir Expedition: Insights from the First and Second Fieldwork Campaigns” (U. Alcalá in collaboration with U. Jaén)</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[03]</div>
+        <div class="time">10:10 — 10:40</div>
+        <div class="who">Sue Kelly<span class="sub">Charles University, Prague · “Building Digital Immortality for the Women of Ancient Egypt”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row break">
+        <div class="idx">[--]</div>
+        <div class="time">10:40 — 11:00</div>
+        <div class="who">// interval · 20 min</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[04]</div>
+        <div class="time">11:00 — 11:30</div>
+        <div class="who">Dr. Daniel González León<span class="sub">Yale University · Title TBA</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[05]</div>
+        <div class="time">11:30 — 12:00</div>
+        <div class="who">Dr. Hazem Farrag<span class="sub">Ain Shams University · “Hieroglyphic Transformation in the Temples of Graeco-Roman Egypt”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[06]</div>
+        <div class="time">12:00 — 12:30</div>
+        <div class="who">Dr. Heba Hassan Ahmed Amer<span class="sub">Alexandria National Museum · “Sacred Meals and Religious Identity in Greco-Roman Egypt: Evidence from Alexandria and Oxyrhynchus”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row break">
+        <div class="idx">[--]</div>
+        <div class="time">12:30 — 13:30</div>
+        <div class="who">// luncheon interval · 60 min</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[07]</div>
+        <div class="time">13:30 — 14:00</div>
+        <div class="who">Walid Elsayed<span class="sub">Tahta Antiquities Inspectorate, Sohag · “The Archaeology of the North Sohag Region in the Light of the Most Recent Archaeological Explorations”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[08]</div>
+        <div class="time">14:00 — 14:30</div>
+        <div class="who">Dr. Marwan Kilani<span class="sub">University of Basel · “Language as a Historical Source: Integrating Linguistics into Egyptological Historical Research”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[09]</div>
+        <div class="time">14:30 — 15:00</div>
+        <div class="who">Prof. Dr. Nesma Ibrahim<span class="sub">New Valley University · “New Readings of Coptic Inscriptions from the Bagawat Necropolis (Kharga Oasis)”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row break">
+        <div class="idx">[--]</div>
+        <div class="time">15:00 — 15:20</div>
+        <div class="who">// interval · 20 min</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[10]</div>
+        <div class="time">15:20 — 15:50</div>
+        <div class="who">Aziza Abdallah &amp; Hadeer Belal<span class="sub">Egyptian Museum, Cairo · “Reborn in the Records: The Museum Life of a Falcon Mummy Coffin Repatriated to Egypt in 2021”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row">
+        <div class="idx">[11]</div>
+        <div class="time">15:50 — 16:20</div>
+        <div class="who">Prof. Dr. Magdy Elwan<span class="sub">Assiut University · “Masterpieces of Islamic Architecture in Egypt through the Eyes of Foreign Travelers”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A</div>
+      </div>
+
+      <div class="row ceremony">
+        <div class="idx">[12]</div>
+        <div class="time">16:50 — 17:00</div>
+        <div class="who">Closing</div>
+        <div class="tag">Ceremony</div>
+      </div>
+
+      <div class="row break">
+        <div class="idx">[**]</div>
+        <div class="time">17:00 — 17:20</div>
+        <div class="who">// pre-visit guidance · Dr. Tadashi Kikugawa</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="row break">
+        <div class="idx">[**]</div>
+        <div class="time">19:30 — 20:30</div>
+        <div class="who">// excursion · Ancient Egyptian Museum, Shibuya</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="row break">
+        <div class="idx">[**]</div>
+        <div class="time">21:00 — 22:00</div>
+        <div class="who">// night view · Tokyo Metropolitan Gov. Bldg, Shinjuku</div>
+        <div class="tag"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEAKERS ============ -->
+<section id="speakers">
+  <div class="container">
+    <div class="sec-head">
+      <div class="num">§ 03 // SPEAKERS.tokens</div>
+      <h2>Eleven papers, <em>twelve scholars.</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">招待講演者 · 十二名 · 十一発表</span></span>
+    </div>
+
+    <div class="sp-meta">
+      <div class="seg"><span class="lbl">// papers:</span><span class="v">11</span></div>
+      <div class="seg"><span class="lbl">// scholars:</span><span class="v">12</span></div>
+      <div class="seg"><span class="lbl">// mode:</span><span class="v">hybrid · online</span></div>
+    </div>
+
+    <div class="speakers">
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>01</div>
+          <div class="vec">ALX · EG</div>
+        </div>
+        <div class="name">Dr. Azza<br/>Ezzat</div>
+        <div class="aff">Bibliotheca Alexandrina</div>
+        <div class="paper">“Ahmed Pasha Kamal and the First Arabic-Based System in Egyptology”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>02</div>
+          <div class="vec">JAÉN · ES</div>
+        </div>
+        <div class="name">Dr. José Manuel<br/>Alba Gómez</div>
+        <div class="aff">University of Jaén</div>
+        <div class="paper">“The Qaw el-Kebir Expedition: Insights from the First and Second Fieldwork Campaigns” <span style="color:var(--muted)">(U. Alcalá in collaboration with U. Jaén)</span></div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>03</div>
+          <div class="vec">PRG · CZ</div>
+        </div>
+        <div class="name">Sue<br/>Kelly</div>
+        <div class="aff">Charles University, Prague</div>
+        <div class="paper">“Building Digital Immortality for the Women of Ancient Egypt”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>04</div>
+          <div class="vec">YALE · US</div>
+        </div>
+        <div class="name">Dr. Daniel<br/>González León</div>
+        <div class="aff">Yale University</div>
+        <div class="paper">Title TBA</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>05</div>
+          <div class="vec">CAI · EG</div>
+        </div>
+        <div class="name">Dr. Hazem<br/>Farrag</div>
+        <div class="aff">Ain Shams University</div>
+        <div class="paper">“Hieroglyphic Transformation in the Temples of Graeco-Roman Egypt”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>06</div>
+          <div class="vec">ALX · EG</div>
+        </div>
+        <div class="name">Dr. Heba Hassan<br/>Ahmed Amer</div>
+        <div class="aff">Alexandria National Museum</div>
+        <div class="paper">“Sacred Meals and Religious Identity in Greco-Roman Egypt: Evidence from Alexandria and Oxyrhynchus”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>07</div>
+          <div class="vec">SHG · EG</div>
+        </div>
+        <div class="name">Walid<br/>Elsayed</div>
+        <div class="aff">Tahta Antiquities Inspectorate, Sohag</div>
+        <div class="paper">“The Archaeology of the North Sohag Region in the Light of the Most Recent Archaeological Explorations”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>08</div>
+          <div class="vec">BAS · CH</div>
+        </div>
+        <div class="name">Dr. Marwan<br/>Kilani</div>
+        <div class="aff">University of Basel</div>
+        <div class="paper">“Language as a Historical Source: Integrating Linguistics into Egyptological Historical Research”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>09</div>
+          <div class="vec">KHG · EG</div>
+        </div>
+        <div class="name">Prof. Dr. Nesma<br/>Ibrahim</div>
+        <div class="aff">New Valley University</div>
+        <div class="paper">“New Readings of Coptic Inscriptions from the Bagawat Necropolis (Kharga Oasis)”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>10</div>
+          <div class="vec">CAI · EG</div>
+        </div>
+        <div class="name">Aziza Abdallah<br/>&amp; Hadeer Belal</div>
+        <div class="aff">Egyptian Museum, Cairo</div>
+        <div class="paper">“Reborn in the Records: The Museum Life of a Falcon Mummy Coffin Repatriated to Egypt in 2021”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+      <div class="sp">
+        <div class="top-row">
+          <div class="num"><span class="pre">spk_</span>11</div>
+          <div class="vec">ASY · EG</div>
+        </div>
+        <div class="name">Prof. Dr. Magdy<br/>Elwan</div>
+        <div class="aff">Assiut University</div>
+        <div class="paper">“Masterpieces of Islamic Architecture in Egypt through the Eyes of Foreign Travelers”</div>
+        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VENUE / TOUR ============ -->
+<section id="venue">
+  <div class="container">
+    <div class="sec-head">
+      <div class="num">§ 04 // LOCUS.map</div>
+      <h2>Tokyo, <em>and beyond.</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">会場および付随プログラム</span></span>
+    </div>
+
+    <div class="vt-grid">
+
+      <div class="vt-cell photo" style="background-image:linear-gradient(rgba(6,7,10,0.74),rgba(6,7,10,0.9)),url('images/photo12.jpg')">
+        <span class="pin">Myōgadani · 35.71°N</span>
+        <span class="label">main venue</span>
+        <h3>University of Tsukuba <em>— Tokyo Campus, Rm 120.</em></h3>
+        <p>All sessions of ISET·26 are held in <strong>Lecture Room 120</strong> at the Tokyo Campus of the University of Tsukuba (nearest station: Myōgadani), with the programme also streamed online.</p>
+        <div class="when">
+          <span class="lbl">// date · hours</span>
+          <span class="val">16 · 07 · 2026 / 09:00 — 17:00</span>
+        </div>
+      </div>
+
+      <div class="vt-cell optional photo" style="background-image:linear-gradient(rgba(6,7,10,0.6),rgba(6,7,10,0.86)),url('images/photo14.jpg')">
+        <span class="pin">Shibuya · Excursion</span>
+        <span class="label">excursion · post-symposium</span>
+        <h3>Ancient Egyptian Museum <em>— Shibuya.</em></h3>
+        <p>Following the sessions, participants visit the <strong>Ancient Egyptian Museum</strong> in Shibuya — a rare opportunity in Japan to view a curated collection of pharaonic-period artefacts — guided by its president, Dr. Tadashi Kikugawa.</p>
+        <p>The route passes the famous Shibuya scramble crossing en route from the symposium.</p>
+        <div class="when">
+          <span class="lbl">// excursion · hours</span>
+          <span class="val">16 · 07 · 2026 / 19:30 — 20:30</span>
+        </div>
+      </div>
+
+      <div class="vt-cell photo" style="background-image:linear-gradient(rgba(6,7,10,0.55),rgba(6,7,10,0.85)),url('images/photo13.jpg')">
+        <span class="pin">Shinjuku · Night</span>
+        <span class="label">night view · post-symposium</span>
+        <h3>Tokyo Metropolitan <em>Government Building.</em></h3>
+        <p>The day concludes in Shinjuku with a night view of the city from the observatory of the <strong>Tokyo Metropolitan Government Building</strong>, overlooking the skyscraper district.</p>
+        <div class="when">
+          <span class="lbl">// night view · hours</span>
+          <span class="val">16 · 07 · 2026 / 21:00 — 22:00</span>
+        </div>
+      </div>
+
+      <div class="vt-cell optional photo" style="background-image:linear-gradient(rgba(6,7,10,0.72),rgba(6,7,10,0.9)),url('images/photo7.jpg')">
+        <span class="pin">Tokyo · Optional</span>
+        <span class="label">optional tour · next day</span>
+        <h3>Printing Museum <em>— Tokyo.</em></h3>
+        <p>An optional curator's tour of the <strong>Printing Museum, Tokyo</strong> is offered the following day for interested participants.</p>
+        <div class="when">
+          <span class="lbl">// optional · time</span>
+          <span class="val">17 · 07 · 2026 / 15:00</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery-head">
+      <span class="lbl">access · google maps</span>
+      <span class="jp-t">筑波大学 東京キャンパス文京校舎（最寄駅：茗荷谷）</span>
+    </div>
+    <div class="map-frame">
+      <span class="hint">// U. Tsukuba · Tokyo Campus (Bunkyō)</span>
+      <span class="ctr-tl"></span><span class="ctr-tr"></span>
+      <span class="ctr-bl"></span><span class="ctr-br"></span>
+      <iframe
+        src="https://www.google.com/maps?q=%E7%AD%91%E6%B3%A2%E5%A4%A7%E5%AD%A6%E6%9D%B1%E4%BA%AC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%E6%96%87%E4%BA%AC%E6%A0%A1%E8%88%8E&z=16&hl=en&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="University of Tsukuba, Tokyo Campus — Google Map"></iframe>
+    </div>
+    <a class="map-link" href="https://maps.app.goo.gl/CovjhLVUkjm4rhK28" target="_blank" rel="noopener">
+      Open in Google Maps →
+    </a>
+
+    <div class="gallery-head">
+      <span class="lbl">campus &amp; city · field record</span>
+      <span class="jp-t">筑波大学 東京キャンパス（茗荷谷）と東京の風景</span>
+    </div>
+    <div class="gallery">
+      <figure><img src="images/photo4.jpg" alt="University of Tsukuba Tokyo Campus grounds in autumn" loading="lazy"/><figcaption>Tokyo Campus · autumn grounds</figcaption></figure>
+      <figure><img src="images/photo3.jpg" alt="Campus pathway with sculptures and autumn trees" loading="lazy"/><figcaption>Campus pathway · Myōgadani</figcaption></figure>
+      <figure><img src="images/photo6.jpg" alt="Bronze sculpture on the Tokyo Campus" loading="lazy"/><figcaption>Campus sculpture</figcaption></figure>
+      <figure><img src="images/photo9.jpg" alt="Campus building amid autumn foliage" loading="lazy"/><figcaption>Campus building</figcaption></figure>
+      <figure><img src="images/photo8.jpg" alt="Tree-lined campus walk" loading="lazy"/><figcaption>Campus walk</figcaption></figure>
+      <figure><img src="images/photo10.jpg" alt="Spherical sculpture on the campus path" loading="lazy"/><figcaption>Campus sculpture</figcaption></figure>
+      <figure><img src="images/photo14.jpg" alt="Shibuya scramble crossing at night" loading="lazy"/><figcaption>Shibuya crossing · night</figcaption></figure>
+      <figure><img src="images/photo13.jpg" alt="Night view of Tokyo from Shinjuku" loading="lazy"/><figcaption>Tokyo skyline · Shinjuku</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOLUME ============ -->
+<section id="volume">
+  <div class="container">
+    <div class="sec-head">
+      <div class="num">§ 05 // VOLUME.publish</div>
+      <h2>A printed afterlife <em>— the symposium volume.</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">シンポジウム論集について</span></span>
+    </div>
+
+    <div class="volume-card">
+      <div class="icon">
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#00e5ff" stroke-width="1.4">
+            <rect x="14" y="14" width="68" height="68" />
+            <line x1="48" y1="14" x2="48" y2="82" />
+            <line x1="22" y1="30" x2="40" y2="30" />
+            <line x1="22" y1="40" x2="40" y2="40" />
+            <line x1="22" y1="50" x2="40" y2="50" />
+            <line x1="56" y1="30" x2="74" y2="30" />
+            <line x1="56" y1="40" x2="74" y2="40" />
+            <line x1="56" y1="50" x2="74" y2="50" />
+            <line x1="22" y1="64" x2="74" y2="64" stroke-dasharray="2 4" opacity="0.5"/>
+            <line x1="22" y1="72" x2="74" y2="72" stroke-dasharray="2 4" opacity="0.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>Proceedings published <em>1 — 3 years</em> after the conference.</h3>
+        <p>A peer-curated volume drawn from the papers delivered at ISET·26 will appear in print within one to three years of the symposium, gathering the contributions into a single scholarly reference.
+          <span class="jp">本シンポジウムの論集は、会期の1〜3年後に刊行される予定です。</span>
+        </p>
+      </div>
+      <div class="badge-side">
+        <span class="yrs">1 — 3</span>
+        <span class="lbl">// YRS TO PRESS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUNDING ============ -->
+<section id="funding">
+  <div class="container">
+    <div class="sec-head">
+      <div class="num">§ 06 // FUNDING.sources</div>
+      <h2>With the support of, <em>and gratitude to —</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">本シンポジウムは、以下の助成事業の支援を受けて運営されています。</span></span>
+    </div>
+
+    <!-- Group 1: JSPS -->
+    <div class="fund-group">
+      <div class="group-head">
+        <div class="gnum">[01] · JSPS</div>
+        <h4>独立行政法人日本学術振興会 科学研究費助成事業
+          <span class="en">Japan Society for the Promotion of Science · Kakenhi</span>
+        </h4>
+      </div>
+
+      <div class="grants">
+
+        <div class="grant">
+          <div class="gid">JP26K03871</div>
+          <div class="gtitle">古コプト文字エジプト語文献における咽頭音消失プロセスの包括的解明</div>
+          <div class="gtitle-en">A Comprehensive Elucidation of the Process of Pharyngeal Loss in Egyptian Texts Written in the Old Coptic Script</div>
+          <div class="gmeta">
+            <span class="chip cat">基盤研究 (C) · Scientific Research (C)</span>
+            <span class="chip pi">PI · 宮川 創 So Miyagawa</span>
+          </div>
+        </div>
+
+        <div class="grant">
+          <div class="gid">JP26KF0010</div>
+          <div class="gtitle">コプト語写本のデジタル保存と分析</div>
+          <div class="gtitle-en">Digital Preservation and Analysis of Coptic Manuscripts</div>
+          <div class="gmeta">
+            <span class="chip cat">特別研究員奨励費 · Grant-in-Aid for JSPS Fellows</span>
+            <span class="chip pi">Post-Doctoral Fellow · 宮川 創 So Miyagawa</span>
+          </div>
+        </div>
+
+        <div class="grant" style="grid-column:1 / -1">
+          <div class="gid">JP26K00004</div>
+          <div class="gtitle">大規模言語モデルをシミュレータと見立てた言語シミュレーション学計画研究</div>
+          <div class="gtitle-en">Planned Research on Linguistic Simulation Studies Treating Large Language Models as Simulators</div>
+          <div class="gmeta">
+            <span class="chip cat">学術変革領域研究 (B) · Transformative Research Areas (B)</span>
+            <span class="chip pi">PI · 川崎 義史 Yoshifumi Kawasaki</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Group 2: TAF -->
+    <div class="fund-group">
+      <div class="group-head">
+        <div class="gnum">[02] · TAF</div>
+        <h4>公益財団法人 電気通信普及財団 研究助成事業
+          <span class="en">The Telecommunications Advancement Foundation · Research Grant</span>
+        </h4>
+      </div>
+
+      <div class="grants">
+        <div class="grant" style="grid-column:1 / -1">
+          <div class="gid">TAF · Research Grant</div>
+          <div class="gtitle">消滅の危機に瀕する諸言語のための人工知能を活用したツールの開発</div>
+          <div class="gtitle-en">Development of AI-Powered Tools for Endangered Languages</div>
+          <div class="gmeta">
+            <span class="chip cat">研究助成 · Research Grant</span>
+            <span class="chip pi">PI · 宮川 創 So Miyagawa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-big">
+      See you in <span class="accent">Tokyo</span>,<br/>
+      <span class="amb">July ·</span> 2026.
+    </div>
+    <div class="foot-row">
+      <div>ISET · 26 // VOL. II <span class="roman">· MMXXVI</span></div>
+      <div>Post-conference of <a class="cre" href="https://cre26.tokyo/" target="_blank" rel="noopener">CRE26 Tokyo</a></div>
+      <div>U. of Tsukuba · Tokyo Campus</div>
+      <div>16.07.2026 // 09:00 — 17:00 JST</div>
+      <div class="end">SYS · ONLINE</div>
+    </div>
+  </div>
+</footer>
+
+<a class="float-reg" href="https://forms.gle/CTEYaVueAddmYmMF7" target="_blank" rel="noopener">
+  <span class="led"></span>Register →
+</a>
+
+<script>
+  // ====== BOOT ======
+  setTimeout(function(){
+    var b = document.getElementById('boot');
+    if(b) b.classList.add('done');
+  }, 1800);
+
+  // ====== CUSTOM CURSOR ======
+  (function(){
+    var c = document.getElementById('cursor');
+    var r = document.getElementById('cursorCross');
+    if(!c || !r) return;
+    var x=0, y=0, rx=0, ry=0;
+    window.addEventListener('mousemove', function(e){
+      x = e.clientX; y = e.clientY;
+      c.style.transform = 'translate('+x+'px,'+y+'px) translate(-50%,-50%)';
+    });
+    function tick(){
+      rx += (x - rx) * 0.18;
+      ry += (y - ry) * 0.18;
+      r.style.transform = 'translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
+      requestAnimationFrame(tick);
+    }
+    tick();
+    var hov = document.querySelectorAll('a, button, .sp, .row, .grant, .vt-cell');
+    hov.forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        r.style.width='86px'; r.style.height='86px';
+      });
+      el.addEventListener('mouseleave', function(){
+        r.style.width='60px'; r.style.height='60px';
+      });
+    });
+  })();
+
+  // ====== LIVE CLOCK (JST) ======
+  (function(){
+    var el = document.getElementById('hudClock');
+    if(!el) return;
+    function pad(n){return n<10?'0'+n:''+n}
+    function tick(){
+      var n = new Date();
+      var jst = new Date(n.getTime() + (n.getTimezoneOffset()*60000) + (9*3600000));
+      el.textContent = pad(jst.getHours())+':'+pad(jst.getMinutes())+':'+pad(jst.getSeconds());
+    }
+    tick();setInterval(tick,1000);
+  })();
+
+  // ====== NEURAL MESH CANVAS ======
+  (function(){
+    var cv = document.getElementById('netCanvas');
+    if(!cv) return;
+    var ctx = cv.getContext('2d');
+    var W, H, nodes = [];
+    var NUM = 60;
+    var MAX_D = 160;
+    var mouse = {x:-9999, y:-9999};
+
+    function resize(){
+      W = cv.width = cv.offsetWidth * devicePixelRatio;
+      H = cv.height = cv.offsetHeight * devicePixelRatio;
+      ctx.scale(1,1);
+    }
+    function init(){
+      nodes = [];
+      for(var i=0;i<NUM;i++){
+        nodes.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          vx: (Math.random()-0.5)*0.4,
+          vy: (Math.random()-0.5)*0.4,
+          r: Math.random()*1.4 + 0.6
+        });
+      }
+    }
+    function step(){
+      ctx.clearRect(0,0,W,H);
+      // update
+      for(var i=0;i<nodes.length;i++){
+        var n = nodes[i];
+        n.x += n.vx; n.y += n.vy;
+        if(n.x<0||n.x>W) n.vx*=-1;
+        if(n.y<0||n.y>H) n.vy*=-1;
+      }
+      // edges
+      for(var i=0;i<nodes.length;i++){
+        for(var j=i+1;j<nodes.length;j++){
+          var a = nodes[i], b = nodes[j];
+          var dx = a.x-b.x, dy = a.y-b.y;
+          var d = Math.sqrt(dx*dx+dy*dy);
+          if(d < MAX_D*devicePixelRatio){
+            var alpha = 1 - d/(MAX_D*devicePixelRatio);
+            ctx.strokeStyle = 'rgba(0,229,255,'+(alpha*0.18)+')';
+            ctx.lineWidth = 0.6;
+            ctx.beginPath();
+            ctx.moveTo(a.x,a.y);
+            ctx.lineTo(b.x,b.y);
+            ctx.stroke();
+          }
+        }
+      }
+      // mouse links
+      var mx = mouse.x*devicePixelRatio, my = mouse.y*devicePixelRatio;
+      for(var i=0;i<nodes.length;i++){
+        var n = nodes[i];
+        var dx = n.x-mx, dy = n.y-my;
+        var d = Math.sqrt(dx*dx+dy*dy);
+        if(d < 200*devicePixelRatio){
+          var alpha = 1 - d/(200*devicePixelRatio);
+          ctx.strokeStyle = 'rgba(229,162,58,'+(alpha*0.55)+')';
+          ctx.lineWidth = 0.9;
+          ctx.beginPath();
+          ctx.moveTo(n.x,n.y);
+          ctx.lineTo(mx,my);
+          ctx.stroke();
+        }
+      }
+      // nodes
+      for(var i=0;i<nodes.length;i++){
+        var n = nodes[i];
+        ctx.fillStyle = 'rgba(0,229,255,0.6)';
+        ctx.beginPath();
+        ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fill();
+      }
+      requestAnimationFrame(step);
+    }
+    window.addEventListener('resize', function(){resize();init()});
+    window.addEventListener('mousemove', function(e){
+      var rect = cv.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    resize(); init(); step();
+  })();
+</script>
+
+</body>
+</html>
