@@ -739,6 +739,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size:0.96rem;line-height:1.35;color:var(--bone-2);
   }
   .sp .tag-row{margin-top:auto}
+  .sp .sp-photo{
+    width:62px;height:62px;border-radius:50%;object-fit:cover;
+    border:1px solid rgba(0,229,255,0.55);
+    box-shadow:0 0 12px rgba(0,229,255,0.25);
+  }
   .sp::before{
     content:"";position:absolute;inset:0;
     background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(0,229,255,0.10), transparent 50%);
@@ -1549,7 +1554,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sp">
         <div class="top-row">
           <div class="num"><span class="pre">spk_</span>02</div>
-          <div class="vec">JAÉN · ES</div>
+          <img class="sp-photo" src="images/face_jose.jpg" alt="José Manuel Alba Gómez" loading="lazy" />
         </div>
         <div class="name">Dr. José Manuel<br/>Alba Gómez</div>
         <div class="aff">University of Jaén</div>
@@ -1589,7 +1594,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sp">
         <div class="top-row">
           <div class="num"><span class="pre">spk_</span>06</div>
-          <div class="vec">ALX · EG</div>
+          <img class="sp-photo" src="images/face_heba.jpg" alt="Heba Hassan Ahmed Amer" loading="lazy" />
         </div>
         <div class="name">Dr. Heba Hassan<br/>Ahmed Amer</div>
         <div class="aff">Alexandria National Museum</div>
