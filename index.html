@@ -1051,74 +1051,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-shadow:0 0 6px var(--jade);animation:pulse 1.4s infinite;
   }
 
-  /* ================= CROWDFUNDING BANNER ================= */
-  .cf-banner{
-    position:relative;overflow:hidden;padding:52px 36px;
-    background:linear-gradient(120deg, rgba(0,229,255,0.12), rgba(229,162,58,0.12));
-    border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
-  }
-  .cf-banner .cf-inner{
-    max-width:1280px;margin:0 auto;
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:30px;
-  }
-  .cf-banner .cf-kick{
-    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
-    text-transform:uppercase;letter-spacing:0.24em;color:var(--cyan);margin-bottom:12px;
-  }
-  .cf-banner h3{
-    font-family:'Fraunces',serif;font-weight:300;
-    font-size:clamp(1.8rem,4vw,3rem);line-height:1.04;letter-spacing:-0.02em;color:var(--bone);
-  }
-  .cf-banner h3 .num{font-style:italic;color:var(--amber);text-shadow:0 0 20px rgba(229,162,58,0.45)}
-  .cf-banner .jp{
-    display:block;margin-top:14px;max-width:760px;
-    font-family:'Noto Serif JP',serif;font-size:0.98rem;color:var(--bone-2);
-    letter-spacing:0.02em;line-height:1.7;
-  }
-  .cf-btn{
-    flex:none;display:inline-flex;align-items:center;gap:12px;cursor:none;
-    font-family:'JetBrains Mono',monospace;font-weight:700;font-size:0.82rem;
-    text-transform:uppercase;letter-spacing:0.16em;
-    color:#06070a;background:var(--amber);border:1px solid var(--amber);
-    padding:18px 30px;box-shadow:0 0 24px rgba(229,162,58,0.5);
-    transition:transform .2s ease, background .2s ease;
-  }
-  .cf-btn:hover{transform:translateY(-2px) scale(1.02);background:#ffd27a}
-
-  /* ================= SUPPORTERS ================= */
-  #supporters{background:var(--ink)}
-  .sup-tier{margin-bottom:40px}
-  .sup-tier .tier-head{
-    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
-    border-top:1px solid var(--line-2);padding-top:18px;margin-bottom:16px;
-  }
-  .sup-tier .t-en{
-    font-family:'Fraunces',serif;font-style:italic;font-weight:400;
-    font-size:clamp(1.2rem,2.2vw,1.7rem);color:var(--amber);letter-spacing:-0.01em;
-  }
-  .sup-tier .t-jp{font-family:'Noto Serif JP',serif;font-size:0.84rem;color:var(--bone-3)}
-  .sup-tier .t-count{
-    margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.64rem;
-    color:var(--muted);letter-spacing:0.12em;white-space:nowrap;
-  }
-  .sup-names{
-    font-family:'Space Grotesk',sans-serif;font-size:0.98rem;line-height:1.95;
-    color:var(--bone-2);
-  }
-  .sup-names .d{color:var(--cyan);opacity:0.45;margin:0 7px}
-  .sup-tier.diamond .tier-head{border-top-color:var(--cyan)}
-  .sup-tier.diamond .t-en{color:var(--cyan);font-size:clamp(1.5rem,2.8vw,2.1rem)}
-  .sup-tier.diamond .sup-names{
-    font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2.2rem);
-    font-weight:300;color:var(--bone);text-shadow:0 0 18px rgba(0,229,255,0.3);
-  }
-  .sup-note{
-    margin-top:44px;padding-top:22px;border-top:1px solid var(--line-2);
-    font-family:'Space Grotesk',sans-serif;font-size:0.9rem;color:var(--bone-3);line-height:1.65;
-  }
-  .sup-note .jp{display:block;margin-bottom:8px;font-family:'Noto Serif JP',serif;color:var(--bone-2)}
-  @media (max-width:760px){.cf-banner .cf-inner{flex-direction:column;align-items:flex-start}}
-
   /* ================= THEME TOGGLE & LIGHT MODE ================= */
   .nav-right{display:flex;align-items:center;gap:14px}
   .theme-toggle{
@@ -1194,7 +1126,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#venue"><span class="n">04</span>venue</a></li>
     <li><a href="#volume"><span class="n">05</span>volume</a></li>
     <li><a href="#funding"><span class="n">06</span>funding</a></li>
-    <li><a href="#supporters"><span class="n">07</span>thanks</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme">☀</button>
@@ -1345,19 +1276,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </span>
   </div>
 </div>
-
-<!-- ============ CROWDFUNDING THANK-YOU BANNER ============ -->
-<section class="cf-banner" id="support">
-  <div class="cf-inner">
-    <div class="cf-text">
-      <div class="cf-kick">// CRE26 Tokyo · Crowdfunding</div>
-      <h3>Thank you to our <span class="num">318</span> supporters.
-        <span class="jp">CRE26 Tokyo クラウドファンディングにて、総勢318名の皆様より温かいご支援を賜りました。心より御礼申し上げます。</span>
-      </h3>
-    </div>
-    <a class="cf-btn" href="https://readyfor.jp/projects/CRE26-Tokyo" target="_blank" rel="noopener">View the Campaign →</a>
-  </div>
-</section>
 
 <!-- ============ ABOUT ============ -->
 <section id="about">
@@ -1887,54 +1805,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- ============ SUPPORTERS ============ -->
-<section id="supporters">
-  <div class="container">
-    <div class="sec-head">
-      <div class="num">§ 07 // SUPPORTERS.thanks</div>
-      <h2>With gratitude to our <em>318 supporters.</em></h2>
-      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">CRE26 Tokyo クラウドファンディング ご支援者一覧</span></span>
-    </div>
-
-    <div class="sup-tier diamond">
-      <div class="tier-head">
-        <span class="t-en">Diamond Sponsor</span>
-        <span class="t-jp">ダイヤモンドスポンサー</span>
-      </div>
-      <div class="sup-names">白川 尚史</div>
-    </div>
-
-    <div class="sup-tier">
-      <div class="tier-head">
-        <span class="t-en">Sponsors</span>
-        <span class="t-jp">スポンサー</span>
-      </div>
-      <div class="sup-names">Fátima<span class="d">·</span>Haruko SAKAEDANI<span class="d">·</span>Izumi Takamiya<span class="d">·</span>Jiro Kondo<span class="d">·</span>KATSUYA IHAMA<span class="d">·</span>Keika Takeda<span class="d">·</span>Kotaro Murata<span class="d">·</span>m.sato<span class="d">·</span>Michinori OHSHIRO<span class="d">·</span>Motoaki Hara<span class="d">·</span>Rikky Thomas<span class="d">·</span>sara<span class="d">·</span>いかたま<span class="d">·</span>石川大輔<span class="d">·</span>石田道人<span class="d">·</span>今岡 潤哉<span class="d">·</span>岩田 隆志<span class="d">·</span>臼山利信<span class="d">·</span>上野幸子<span class="d">·</span>漆原雅枝<span class="d">·</span>大松真菜<span class="d">·</span>岡田 文太朗<span class="d">·</span>押尾高志<span class="d">·</span>加藤豊明<span class="d">·</span>古代エジプト美術館 館長 菊川匡<span class="d">·</span>黒島規史 (KUROSHIMA Norifumi)<span class="d">·</span>酒本 典明 (SAKAMOTO Noriaki)<span class="d">·</span>佐藤慶一<span class="d">·</span>白出角太氏玉姓 命瑛明古家芳龍<span class="d">·</span>鈴木啓之<span class="d">·</span>曽我美由紀<span class="d">·</span>高道 慎之介<span class="d">·</span>武田桃奈<span class="d">·</span>田中環子<span class="d">·</span>田中真琴<span class="d">·</span>谷徹也<span class="d">·</span>出村和彦 (DEMURA Kazuhiko)<span class="d">·</span>永谷史朗<span class="d">·</span>疋田 都<span class="d">·</span>藤村真由<span class="d">·</span>まさやさん<span class="d">·</span>松本典子<span class="d">·</span>三代舞<span class="d">·</span>みほきょ<span class="d">·</span>武藤崇史<span class="d">·</span>山田佐知子<span class="d">·</span>山田康博<span class="d">·</span>山花京子<span class="d">·</span>吉田 昌敏</div>
-    </div>
-
-    <div class="sup-tier">
-      <div class="tier-head">
-        <span class="t-en">Supporters</span>
-        <span class="t-jp">サポーター</span>
-      </div>
-      <div class="sup-names">aco<span class="d">·</span>Atsushi Noguchi<span class="d">·</span>DEGLIN F.<span class="d">·</span>HANGYO, Masatsugu<span class="d">·</span>hidetsumo<span class="d">·</span>Hisao USUI<span class="d">·</span>jack4andMana'sTalk 𓏌𓏏𓇯 𓎸𓅓 𓉾 𓏠𓈖[] 𓊽<span class="d">·</span>Julia Hamilton<span class="d">·</span>koichiro<span class="d">·</span>Mariam Y. SHINSHI<span class="d">·</span>Masayuki Ike<span class="d">·</span>m_betsy<span class="d">·</span>MIKA<span class="d">·</span>Richard Sproat<span class="d">·</span>Sawako<span class="d">·</span>Shin NOMOTO<span class="d">·</span>Shura Suzuki<span class="d">·</span>Tetsu AKORIS<span class="d">·</span>YH<span class="d">·</span>Yukiko Kawamoto<span class="d">·</span>Yumiko.K<span class="d">·</span>y.ogawa<span class="d">·</span>池田 潤<span class="d">·</span>伊計拓郎<span class="d">·</span>石貫弘泰<span class="d">·</span>えり<span class="d">·</span>エジプシャンスーク<span class="d">·</span>奥村百々子<span class="d">·</span>奥山広規<span class="d">·</span>大稔哲也<span class="d">·</span>小泉 利恵<span class="d">·</span>小波秀雄<span class="d">·</span>小堀 馨子<span class="d">·</span>河合望<span class="d">·</span>川島 江理<span class="d">·</span>菊池正和<span class="d">·</span>久道瑛未<span class="d">·</span>栗林健太郎<span class="d">·</span>恵理矢 イェディディヤ<span class="d">·</span>近藤<span class="d">·</span>齊藤礼子<span class="d">·</span>斎藤理生<span class="d">·</span>坂本 翼<span class="d">·</span>佐々木 充文<span class="d">·</span>佐藤育子<span class="d">·</span>澤田香苗<span class="d">·</span>柴田広志<span class="d">·</span>杉本篤史<span class="d">·</span>セキザワユカ<span class="d">·</span>曽我部涼<span class="d">·</span>園田洋介<span class="d">·</span>高橋 亮介<span class="d">·</span>竹田真紀<span class="d">·</span>田中佑樹<span class="d">·</span>津田謙治（京都大学文学研究科・キリスト教学専修）<span class="d">·</span>中川裕<span class="d">·</span>中西恭子 (Kyoko Nakanishi)<span class="d">·</span>西村綾夏（飲酒太郎）<span class="d">·</span>根本健太郎<span class="d">·</span>ハムコ 推しはネフェルタリ<span class="d">·</span>日野太貴<span class="d">·</span>檜山 元一郎<span class="d">·</span>前川 裕<span class="d">·</span>前田眞由美<span class="d">·</span>増田和<span class="d">·</span>松本直樹<span class="d">·</span>まりあ<span class="d">·</span>丸島歩<span class="d">·</span>ミール・グレゴリウス<span class="d">·</span>密教行者きぞく<span class="d">·</span>森山 亮<span class="d">·</span>矢野愛美<span class="d">·</span>やきたて<span class="d">·</span>山口章江<span class="d">·</span>山下真里亜<span class="d">·</span>山田重郎<span class="d">·</span>山本 孟<span class="d">·</span>吉川直樹<span class="d">·</span>吉野宏志<span class="d">·</span>れん<span class="d">·</span>渡部宏樹<span class="d">·</span>黄 海萍<span class="d">·</span>一般財団法人桂石文化振興財団</div>
-    </div>
-
-    <div class="sup-tier">
-      <div class="tier-head">
-        <span class="t-en">Overseas Supporters</span>
-        <span class="t-jp">海外サポーター</span>
-      </div>
-      <div class="sup-names">Ayumi Imai<span class="d">·</span>Danielle Németh<span class="d">·</span>David Mihalyfy<span class="d">·</span>Ekaterina Barbash<span class="d">·</span>Essex Egyptology Group<span class="d">·</span>José Manuel Alba Gómez<span class="d">·</span>Lucilla Butler<span class="d">·</span>Mathilde Prévost<span class="d">·</span>Mr Griffiths<span class="d">·</span>Namba Yoko<span class="d">·</span>Stephen Vinson<span class="d">·</span>Tara Prakash<span class="d">·</span>Urska Furlan</div>
-    </div>
-
-    <p class="sup-note">
-      <span class="jp">お名前掲載希望者のみ掲載しています。クラウドファンディング全体では総勢318名の方にご寄付いただきました。ご支援、誠にありがとうございました。</span>
-      Only the names of those who wished to be listed are included. In total, 318 people made donations to the crowdfunding campaign as a whole. We are sincerely grateful for your support.
-    </p>
   </div>
 </section>
 
