@@ -786,6 +786,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:var(--jade);margin-right:5px;vertical-align:middle;
     box-shadow:0 0 4px var(--jade);
   }
+  .sp .tag2.online{color:var(--cyan);border-color:var(--cyan)}
+  .sp .tag2.online::before{
+    content:"";display:inline-block;width:4px;height:4px;border-radius:50%;
+    background:var(--cyan);margin-right:5px;vertical-align:middle;
+    box-shadow:0 0 4px var(--cyan);
+  }
   .sp a.tag2.lnk{color:var(--cyan);border-color:rgba(0,229,255,0.5);text-decoration:none}
   .sp a.tag2.lnk:hover{background:var(--cyan);color:var(--ink);border-color:var(--cyan)}
   @media (max-width:980px){.speakers{grid-template-columns:repeat(2,1fr)}}
@@ -1491,8 +1497,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="row">
         <div class="idx">[11]</div>
         <div class="time">15:50 — 16:20</div>
-        <div class="who">Dr. Mona Sawy<span class="sub">Assiut University · “Healing Substances and Therapeutic Remedies in Coptic Medical Texts: Exploring the Coptic Pharmacopoeia”</span></div>
-        <div class="tag">25′ + 5′ Q&amp;A</div>
+        <div class="who">Dr. Mona Sawy <span style="color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.1em">[ONLINE]</span><span class="sub">Assiut University · “Healing Substances and Therapeutic Remedies in Coptic Medical Texts: Exploring the Coptic Pharmacopoeia”</span></div>
+        <div class="tag">25′ + 5′ Q&amp;A · online</div>
       </div>
 
       <div class="row">
@@ -1668,7 +1674,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="name">Dr. Mona<br/>Sawy</div>
         <div class="aff">Assiut University</div>
         <div class="paper">“Healing Substances and Therapeutic Remedies in Coptic Medical Texts: Exploring the Coptic Pharmacopoeia”</div>
-        <div class="tag-row"><span class="tag2 live">live</span><span class="tag2">invited</span></div>
+        <div class="tag-row"><span class="tag2 online">online</span><span class="tag2">invited</span></div>
       </div>
     </div>
   </div>
