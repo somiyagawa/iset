@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P6WBF8C3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+<script>(function(){try{var t=localStorage.getItem('iset-theme');if(!t){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<title>エジプトの諸文字は、エジプト語の表記にどこまで適していたのか — Prof. Jean Winand · ISET 東京国際エジプト学セミナー · 2026年11月3日</title>
+<meta name="description" content="東京国際エジプト学セミナー（ISET）。ジャン・ヴィナン教授（リエージュ大学）による講演「エジプトの諸文字は、エジプト語の表記にどこまで適していたのか」。2026年11月3日（火・祝）13:30–18:00、東京大学本郷キャンパス 法文2号館 2階 1番大教室。英語での講演。事前申込制。 — International Seminar of Egyptology in Tokyo: Prof. Jean Winand, 3 November 2026, Hongo Campus, The University of Tokyo." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="How well adapted were the Egyptian writings for transcribing Egyptian? — Prof. Jean Winand · ISET Tokyo" />
+<meta property="og:description" content="International Seminar of Egyptology in Tokyo · 3 November 2026 (Tue, Culture Day), 13:30–18:00 JST · Hongo Campus, The University of Tokyo · Lecture in English." />
+<meta property="og:image" content="images/winand/poster-preview.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#04121b;
+    --ink-2:#071b26;
+    --ink-3:#0b2633;
+    --ink-4:#123443;
+    --bone:#f2efe4;
+    --bone-2:#c2d2d8;
+    --bone-3:#86a3ad;
+    --muted:#4f6e79;
+    --cyan:#3ed8e6;
+    --cyan-deep:#17919f;
+    --teal:#0f4f5e;
+    --gold:#d8b26a;
+    --sand:#e8d6a8;
+    --jade:#3affc0;
+    --line:rgba(242,239,228,0.08);
+    --line-2:rgba(242,239,228,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--bone);overflow-x:hidden}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Space Grotesk',-apple-system,sans-serif;
+    font-weight:400;font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    position:relative;cursor:none;
+    background-image:radial-gradient(circle, rgba(242,239,228,0.035) 1px, transparent 1px);
+    background-size:26px 26px;
+  }
+  /* Film grain */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:300;
+    opacity:0.11;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  ::selection{background:var(--cyan);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font:inherit;background:none;border:none;color:inherit;cursor:none}
+
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:0.04em}
+  .serif{font-family:'Fraunces',serif}
+  .jp{font-family:'Noto Serif JP',serif}
+  .en{font-family:'Fraunces',serif}
+
+  /* ================= CROSSHAIR CURSOR ================= */
+  .cursor{
+    position:fixed;left:0;top:0;width:6px;height:6px;
+    background:var(--cyan);border-radius:50%;
+    pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
+    box-shadow:0 0 12px var(--cyan),0 0 24px rgba(62,216,230,0.4);
+    mix-blend-mode:screen;
+  }
+  .cursor-cross{
+    position:fixed;left:0;top:0;width:58px;height:58px;
+    pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+    transition:width .3s, height .3s, opacity .3s;
+  }
+  .cursor-cross::before,.cursor-cross::after{content:"";position:absolute;background:rgba(62,216,230,0.45)}
+  .cursor-cross::before{left:50%;top:0;width:1px;height:17px;transform:translateX(-50%)}
+  .cursor-cross::after{top:50%;left:0;height:1px;width:17px;transform:translateY(-50%)}
+  .cursor-cross .b{position:absolute;width:6px;height:6px;border:1px solid rgba(62,216,230,0.55)}
+  .cursor-cross .b.tl{top:0;left:0;border-right:none;border-bottom:none}
+  .cursor-cross .b.tr{top:0;right:0;border-left:none;border-bottom:none}
+  .cursor-cross .b.bl{bottom:0;left:0;border-right:none;border-top:none}
+  .cursor-cross .b.br{bottom:0;right:0;border-left:none;border-top:none}
+  @media (max-width:860px){body{cursor:auto}.cursor,.cursor-cross{display:none}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important}
+  }
+
+  /* ================= NAV ================= */
+  nav.top{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+    padding:15px 30px;
+    background:linear-gradient(180deg, rgba(4,18,27,0.92), rgba(4,18,27,0));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.top .mark{
+    font-family:'JetBrains Mono',monospace;font-weight:500;
+    font-size:0.76rem;letter-spacing:0.14em;text-transform:uppercase;
+    display:flex;align-items:center;gap:9px;color:var(--bone);white-space:nowrap;
+  }
+  nav.top .mark .led{
+    width:7px;height:7px;background:var(--cyan);border-radius:50%;
+    box-shadow:0 0 10px var(--cyan);animation:pulse 2s infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+  nav.top .mark .slash{color:var(--cyan)}
+  nav.top ul{
+    list-style:none;display:flex;gap:20px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;text-transform:uppercase;letter-spacing:0.15em;
+  }
+  nav.top ul a{position:relative;padding:6px 2px;color:var(--bone-2);transition:color .2s}
+  nav.top ul a .n{color:var(--cyan);font-size:0.58rem;margin-right:5px}
+  nav.top ul a:hover{color:var(--cyan)}
+  nav.top ul a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+    background:var(--cyan);transition:width .3s ease;
+  }
+  nav.top ul a:hover::after{width:100%}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .theme-toggle{
+    width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;
+    font-size:0.95rem;line-height:1;border:1px solid var(--line-2);
+    color:var(--bone-2);background:rgba(127,127,127,0.10);cursor:none;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .theme-toggle:hover{color:var(--cyan);border-color:var(--cyan)}
+  .nav-reg{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:0.68rem;
+    text-transform:uppercase;letter-spacing:0.15em;
+    padding:9px 16px;border:1px solid var(--cyan);color:var(--cyan);
+    transition:background .25s ease,color .25s ease;white-space:nowrap;
+  }
+  .nav-reg .led{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+  .nav-reg:hover{background:var(--cyan);color:#04121b}
+  .nav-reg:hover .led{background:#04121b;box-shadow:none}
+  @media (max-width:1180px){nav.top ul{display:none}}
+  @media (max-width:560px){nav.top{padding:12px 16px}nav.top .mark{font-size:0.66rem}}
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative;min-height:100vh;
+    padding:110px 32px 56px;
+    display:flex;flex-direction:column;justify-content:center;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 76% 18%, rgba(23,145,159,0.30), transparent 58%),
+      radial-gradient(ellipse at 8% 86%, rgba(15,79,94,0.38), transparent 60%),
+      linear-gradient(170deg, #061e2a 0%, #04121b 55%, #03101a 100%);
+  }
+  /* topographic contour texture */
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:0.5;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='560' viewBox='0 0 560 560'><g fill='none' stroke='%23d8b26a' stroke-opacity='0.16' stroke-width='1'><path d='M-40 120 C 110 40, 230 200, 360 120 S 600 40, 640 130'/><path d='M-40 170 C 110 90, 230 250, 360 170 S 600 90, 640 180'/><path d='M-40 220 C 110 140, 230 300, 360 220 S 600 140, 640 230'/><path d='M-40 330 C 130 260, 220 420, 370 340 S 590 260, 640 350'/><path d='M-40 385 C 130 315, 220 475, 370 395 S 590 315, 640 405'/><path d='M-40 440 C 130 370, 220 530, 370 450 S 590 370, 640 460'/></g></svg>");
+    background-size:560px 560px;
+  }
+  /* the bolt — echoes the poster's lightning seam */
+  .bolt{
+    position:absolute;top:-6%;left:50%;width:min(620px,74vw);height:116%;
+    transform:translateX(-46%);pointer-events:none;z-index:1;opacity:0.85;
+  }
+  .bolt svg{width:100%;height:100%}
+  .bolt .b-glow{filter:blur(9px);opacity:0.55}
+  .bolt .b-core{opacity:0.95}
+  @media (max-width:900px){.bolt{opacity:0.35;left:84%}}
+
+  .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%}
+  .eyebrow{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;font-size:0.68rem;
+    letter-spacing:0.2em;text-transform:uppercase;color:var(--cyan);
+    margin-bottom:20px;
+  }
+  .eyebrow .jp-mark{font-family:'Noto Serif JP',serif;letter-spacing:0.22em;color:var(--bone-2);text-transform:none;font-size:0.76rem}
+  .eyebrow .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--cyan-deep),transparent);min-width:40px}
+
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+  .badge{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:'JetBrains Mono',monospace;font-size:0.6rem;
+    letter-spacing:0.16em;text-transform:uppercase;
+    padding:6px 11px;border:1px solid var(--line-2);color:var(--bone-2);
+    background:rgba(7,27,38,0.55);
+  }
+  .badge .b-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan-deep)}
+  .badge.solid{border-color:var(--cyan);color:var(--cyan)}
+  .badge.solid .b-dot{background:var(--cyan);box-shadow:0 0 7px var(--cyan)}
+  .badge.gold{border-color:rgba(216,178,106,0.5);color:var(--gold)}
+  .badge.gold .b-dot{background:var(--gold)}
+
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:start}
+  @media (max-width:1060px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+
+  h1.display{
+    font-family:'Noto Serif JP',serif;font-weight:600;
+    font-size:clamp(2.1rem,5.3vw,4.15rem);
+    line-height:1.26;letter-spacing:0.004em;
+    margin-bottom:22px;text-wrap:balance;
+  }
+  h1.display .ln{display:block}
+  h1.display .glow{
+    color:var(--bone);
+    text-shadow:0 0 34px rgba(62,216,230,0.22),0 2px 0 rgba(0,0,0,0.3);
+  }
+  h1.display .cy{color:var(--cyan)}
+  .title-en{
+    font-family:'Fraunces',serif;font-weight:300;font-style:normal;
+    font-size:clamp(1.05rem,2.2vw,1.72rem);line-height:1.38;
+    color:var(--bone-2);margin-bottom:18px;max-width:30ch;
+  }
+  .title-note{
+    font-family:'JetBrains Mono',monospace;font-size:0.68rem;
+    letter-spacing:0.14em;color:var(--bone-3);text-transform:uppercase;
+    display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:30px;
+  }
+  .title-note .sep{color:var(--cyan-deep)}
+
+  /* lecturer strip in hero */
+  .hero-lect{
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+    border-left:2px solid var(--cyan);padding:4px 0 4px 18px;margin-bottom:30px;
+  }
+  .hero-lect .k{
+    font-family:'JetBrains Mono',monospace;font-size:0.6rem;
+    letter-spacing:0.2em;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:5px;
+  }
+  .hero-lect .nm{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:500;line-height:1.1}
+  .hero-lect .nm-jp{font-family:'Noto Serif JP',serif;font-size:0.92rem;color:var(--bone-2);margin-top:4px}
+  .hero-lect img{
+    width:84px;height:106px;object-fit:cover;object-position:center 22%;
+    border:1px solid var(--cyan);filter:saturate(0.9);
+  }
+
+  .btn-register{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:'JetBrains Mono',monospace;font-size:0.76rem;
+    letter-spacing:0.16em;text-transform:uppercase;
+    padding:15px 26px;background:var(--cyan);color:#04121b;font-weight:500;
+    transition:transform .2s ease, box-shadow .25s ease;
+    box-shadow:0 0 0 rgba(62,216,230,0);
+  }
+  .btn-register:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(62,216,230,0.28)}
+  .btn-register .arrow{transition:transform .2s ease}
+  .btn-register:hover .arrow{transform:translateX(4px)}
+  .btn-register .sub{font-size:0.58rem;opacity:0.65;letter-spacing:0.12em}
+
+  /* date disc */
+  .disc{
+    position:relative;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle at 50% 42%, #0d3a48 0%, #072330 62%, #051b26 100%);
+    border:1px solid rgba(62,216,230,0.35);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;box-shadow:0 0 70px rgba(23,145,159,0.22) inset, 0 0 40px rgba(4,18,27,0.6);
+    margin-left:auto;
+  }
+  .disc::after{
+    content:"";position:absolute;inset:-14px;border-radius:50%;
+    border:1px dashed rgba(62,216,230,0.18);
+  }
+  .disc .yr{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.34em;color:var(--cyan);margin-bottom:2px}
+  .disc .dt{font-family:'Fraunces',serif;font-size:4.1rem;font-weight:300;line-height:1;letter-spacing:-0.02em}
+  .disc .dow{font-family:'Noto Serif JP',serif;font-size:1.02rem;margin-top:8px;color:var(--bone)}
+  .disc .dow .en{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;color:var(--bone-2)}
+  .disc .hol{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+  .disc .time{font-family:'Fraunces',serif;font-size:1.44rem;font-weight:300;margin-top:10px;color:var(--cyan)}
+  .disc .tz{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.2em;color:var(--bone-3);margin-top:2px}
+  @media (max-width:1060px){.disc{margin:0 auto}}
+  @media (max-width:420px){.disc{width:262px;height:262px}.disc .dt{font-size:3.5rem}}
+
+  .countdown{
+    margin-top:22px;display:flex;gap:10px;justify-content:center;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .countdown .cd{
+    min-width:62px;padding:9px 6px;border:1px solid var(--line-2);
+    background:rgba(7,27,38,0.6);text-align:center;
+  }
+  .countdown .cd .v{display:block;font-size:1.15rem;color:var(--cyan);line-height:1.2}
+  .countdown .cd .k{display:block;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--bone-3);margin-top:3px}
+
+  .hero-meta{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px;
+  }
+  .hero-meta .cell{background:rgba(5,21,30,0.72);padding:16px 18px}
+  .hero-meta .cell .k{
+    font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--cyan-deep);display:block;margin-bottom:7px;
+  }
+  .hero-meta .cell .v{font-size:0.9rem;color:var(--bone);display:block;line-height:1.4}
+  .hero-meta .cell .v-jp{font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--bone-3);display:block;margin-top:3px}
+
+  /* ================= SCRIPT BAND ================= */
+  .band{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
+  }
+  .band .cel{position:relative;background:#000;overflow:hidden}
+  .band .cel img{
+    width:100%;aspect-ratio:1/1;object-fit:cover;
+    filter:contrast(1.04) brightness(0.96);
+    transition:transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+  }
+  .band .cel:hover img{transform:scale(1.07);filter:contrast(1.1) brightness(1.08)}
+  .band .cap{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:14px 14px 12px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.92) 20%, rgba(0,0,0,0));
+    display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+  }
+  .band .cap .rn{font-family:'Fraunces',serif;color:var(--gold);font-size:0.86rem}
+  .band .cap .jp-t{font-family:'Noto Serif JP',serif;font-size:0.84rem;color:var(--bone)}
+  .band .cap .en-t{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan)}
+  @media (max-width:860px){.band{grid-template-columns:repeat(2,1fr)}}
+
+  /* ================= SECTIONS ================= */
+  section{padding:100px 32px;position:relative}
+  .container{max-width:1180px;margin:0 auto}
+  .sec-head{margin-bottom:48px}
+  .sec-head .num{
+    font-family:'JetBrains Mono',monospace;font-size:0.64rem;
+    letter-spacing:0.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px;
+  }
+  .sec-head h2{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(1.8rem,4vw,3.05rem);line-height:1.14;letter-spacing:-0.015em;
+  }
+  .sec-head h2 em{font-style:italic;color:var(--gold)}
+  .sec-head h2 .cy{color:var(--cyan)}
+  .sec-head .jp-sub{
+    display:inline-flex;gap:8px;margin-top:14px;
+    font-family:'Noto Serif JP',serif;font-size:0.94rem;color:var(--bone-3);
+  }
+  .sec-head .jp-sub .hash{color:var(--cyan-deep);font-family:'JetBrains Mono',monospace}
+  .alt{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* ---- about ---- */
+  .about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:52px}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:28px}}
+  .about-grid .lead{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(1.18rem,2.1vw,1.62rem);line-height:1.46;color:var(--bone);
+  }
+  .about-grid .lead em{font-style:italic;color:var(--gold)}
+  .about-grid .lead .cy{color:var(--cyan)}
+  .about-grid .body p{color:var(--bone-2);margin-bottom:17px}
+  .about-grid .body p:last-child{margin-bottom:0}
+  .about-grid .body strong{color:var(--bone);font-weight:500}
+  .about-grid .body .term{color:var(--cyan)}
+  .about-grid .body .jp-p{font-family:'Noto Serif JP',serif;font-size:0.92rem;color:var(--bone-3);line-height:1.85}
+
+  .callout{
+    margin-top:44px;border:1px solid var(--cyan);background:rgba(23,145,159,0.07);
+    padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
+  }
+  .callout .big{
+    font-family:'Noto Serif JP',serif;font-size:clamp(1.15rem,2.4vw,1.6rem);
+    color:var(--cyan);line-height:1.35;white-space:nowrap;
+  }
+  .callout .big .s{display:block;font-size:0.78em;color:var(--bone)}
+  .callout .txt{font-size:0.92rem;color:var(--bone-2)}
+  .callout .txt .jp-p{font-family:'Noto Serif JP',serif;color:var(--bone);margin-bottom:6px;font-size:0.95rem}
+  @media (max-width:760px){.callout{grid-template-columns:1fr;gap:14px}.callout .big{white-space:normal}}
+
+  /* ---- lecturer ---- */
+  .lect{display:grid;grid-template-columns:320px minmax(0,1fr);gap:50px;align-items:start}
+  @media (max-width:860px){.lect{grid-template-columns:1fr;gap:28px}}
+  .lect .shot{position:relative;z-index:0}
+  .lect .shot img{width:100%;border:1px solid var(--line-2)}
+  .lect .shot::after{
+    content:"";position:absolute;inset:14px -14px -14px 14px;
+    border:1px solid var(--cyan);z-index:-1;
+  }
+  .lect .nm{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.05;letter-spacing:-0.015em}
+  .lect .nm-jp{font-family:'Noto Serif JP',serif;font-size:1.12rem;color:var(--bone-2);margin-top:8px}
+  .lect .aff{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+  .lect .aff .jp-p{font-family:'Noto Serif JP',serif;font-size:0.96rem;color:var(--bone);line-height:1.8}
+  .lect .aff .en-p{font-size:0.9rem;color:var(--bone-3);margin-top:6px}
+  .lect .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .lect .tags span{
+    font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;
+    text-transform:uppercase;padding:6px 11px;border:1px solid var(--line-2);color:var(--bone-2);
+  }
+  .chairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+  .chairs .ch{background:var(--ink-3);padding:18px 20px}
+  .chairs .ch .k{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:8px}
+  .chairs .ch .nm2{font-family:'Noto Serif JP',serif;font-size:1.02rem;color:var(--bone)}
+  .chairs .ch .nm2 .rom{font-family:'Fraunces',serif;color:var(--bone-2);font-size:0.94rem;margin-left:8px}
+  .chairs .ch .af{font-size:0.78rem;color:var(--bone-3);margin-top:5px}
+
+  /* ---- programme ---- */
+  .prog{border-top:1px solid var(--line-2)}
+  .row{
+    display:grid;grid-template-columns:200px 1fr;gap:28px;
+    padding:30px 4px;border-bottom:1px solid var(--line);
+    transition:background .3s ease, padding-left .3s ease;position:relative;
+  }
+  .row:hover{background:rgba(23,145,159,0.055);padding-left:16px}
+  .row::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--cyan);
+    transform:scaleY(0);transform-origin:top;transition:transform .3s ease;
+  }
+  .row:hover::before{transform:scaleY(1)}
+  .row .when{font-family:'JetBrains Mono',monospace}
+  .row .when .t{font-size:1.18rem;color:var(--cyan);letter-spacing:0.01em;display:block}
+  .row .when .part{
+    display:inline-block;margin-top:9px;font-size:0.58rem;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--gold);border:1px solid rgba(216,178,106,0.4);padding:4px 9px;
+  }
+  .row .when .part .jpn{font-family:'Noto Serif JP',serif;letter-spacing:0.06em}
+  .row .what .ti-jp{font-family:'Noto Serif JP',serif;font-size:clamp(1rem,1.9vw,1.3rem);color:var(--bone);line-height:1.6}
+  .row .what .ti-en{font-family:'Fraunces',serif;font-weight:300;font-size:1.02rem;color:var(--bone-2);margin-top:7px;line-height:1.4}
+  .row .what .chair{
+    margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:0.63rem;
+    letter-spacing:0.1em;color:var(--bone-3);
+  }
+  .row .what .chair .lbl{color:var(--cyan-deep);text-transform:uppercase;letter-spacing:0.18em;margin-right:8px}
+  .row .what .chair .jpn{font-family:'Noto Serif JP',serif;letter-spacing:0.04em;color:var(--bone-2)}
+  .row.brk{opacity:0.62}
+  .row.brk:hover{background:none;padding-left:4px}
+  .row.brk::before{display:none}
+  .row.brk .when .t{color:var(--bone-3);font-size:0.95rem}
+  .row.brk .what .ti-jp{font-size:0.95rem;color:var(--bone-3)}
+  .prog-note{
+    margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:0.66rem;
+    letter-spacing:0.1em;color:var(--bone-3);
+  }
+  .prog-note .jpn{font-family:'Noto Serif JP',serif;letter-spacing:0.04em}
+  @media (max-width:720px){.row{grid-template-columns:1fr;gap:12px}}
+
+  /* ---- venue ---- */
+  .venue-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:46px;align-items:start}
+  @media (max-width:900px){.venue-grid{grid-template-columns:1fr;gap:30px}}
+  .vname{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3.4vw,2.35rem);line-height:1.35;color:var(--bone)}
+  .vname .rm{color:var(--cyan)}
+  .vname-en{font-family:'Fraunces',serif;font-weight:300;font-size:1.02rem;color:var(--bone-2);margin-top:12px;line-height:1.45}
+  .vaddr{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);font-family:'Noto Serif JP',serif;font-size:0.92rem;color:var(--bone-2);line-height:1.9}
+  .vaddr .hint{color:var(--gold);font-size:0.86rem;display:block;margin-top:6px}
+  .access{margin-top:26px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .access .st{background:var(--ink-3);padding:14px 18px;display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+  .access .st .nmj{font-family:'Noto Serif JP',serif;font-size:0.95rem;color:var(--bone)}
+  .access .st .nmj .lines{font-size:0.78rem;color:var(--bone-3);margin-left:6px}
+  .access .st .walk{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cyan);white-space:nowrap}
+  .access .st .en-s{display:block;font-size:0.72rem;color:var(--bone-3);font-family:'Space Grotesk',sans-serif}
+  .map-frame{position:relative;border:1px solid var(--line-2);overflow:hidden;background:var(--ink-2)}
+  .map-frame iframe{
+    width:100%;height:430px;border:0;display:block;
+    filter:invert(0.91) hue-rotate(170deg) contrast(0.92) saturate(0.8) brightness(0.95);
+    transition:filter .4s ease;
+  }
+  .map-frame:hover iframe{filter:none}
+  .map-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+  .map-links a{
+    font-family:'JetBrains Mono',monospace;font-size:0.66rem;letter-spacing:0.14em;
+    text-transform:uppercase;border:1px solid var(--line-2);padding:11px 16px;color:var(--bone-2);
+    transition:border-color .25s ease,color .25s ease;
+  }
+  .map-links a:hover{border-color:var(--cyan);color:var(--cyan)}
+
+  /* ---- poster ---- */
+  .poster-grid{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:50px;align-items:center}
+  @media (max-width:860px){.poster-grid{grid-template-columns:1fr;gap:28px}}
+  .poster-grid .shot{border:1px solid var(--line-2);box-shadow:0 30px 70px rgba(0,0,0,0.5);transition:transform .4s ease}
+  .poster-grid .shot:hover{transform:translateY(-6px)}
+  .poster-grid .txt p{color:var(--bone-2);margin-bottom:16px}
+  .dl{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--cyan);color:var(--cyan);
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;
+    padding:14px 22px;transition:background .25s ease,color .25s ease}
+  .dl:hover{background:var(--cyan);color:#04121b}
+
+  /* ---- organisers / support ---- */
+  .orgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .orgs .og{background:var(--ink-3);padding:26px 24px;display:flex;flex-direction:column;gap:12px}
+  .orgs .og .logo{background:#fff;padding:12px 14px;align-self:flex-start;max-width:260px}
+  .orgs .og .jp-n{font-family:'Noto Serif JP',serif;font-size:1.02rem;color:var(--bone);line-height:1.6}
+  .orgs .og .en-n{font-size:0.82rem;color:var(--bone-3);line-height:1.5}
+  .grants{display:grid;gap:18px;margin-top:40px}
+  .grant{border:1px solid var(--line);border-left:2px solid var(--gold);background:var(--ink-3);padding:22px 24px}
+  .grant .gid{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .grant .gtitle{font-family:'Noto Serif JP',serif;font-size:1rem;color:var(--bone);line-height:1.65}
+  .grant .gtitle-en{font-size:0.84rem;color:var(--bone-3);margin-top:6px}
+  .grant .gmeta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .grant .chip{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line-2);color:var(--bone-3)}
+  .grant .chip.pi{color:var(--cyan);border-color:rgba(62,216,230,0.35)}
+
+  /* ---- footer ---- */
+  footer{padding:80px 32px 44px;border-top:1px solid var(--line-2);background:var(--ink-2)}
+  .foot-inner{max-width:1180px;margin:0 auto}
+  .foot-big{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(1.9rem,5vw,3.6rem);line-height:1.1;margin-bottom:44px;
+  }
+  .foot-big .accent{color:var(--cyan)}
+  .foot-big .amb{color:var(--gold);font-style:italic}
+  .foot-row{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;
+    border-top:1px solid var(--line);padding-top:24px;
+    font-family:'JetBrains Mono',monospace;font-size:0.66rem;
+    text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);
+  }
+  .foot-row .jpn{font-family:'Noto Serif JP',serif;text-transform:none;letter-spacing:0.04em}
+  .foot-row a:hover{color:var(--cyan)}
+  .foot-row .end{color:var(--cyan);display:flex;align-items:center;gap:8px}
+  .foot-row .end::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 6px var(--cyan);animation:pulse 1.6s infinite}
+
+  .float-reg{
+    position:fixed;right:22px;bottom:22px;z-index:120;
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'JetBrains Mono',monospace;font-size:0.68rem;
+    letter-spacing:0.16em;text-transform:uppercase;
+    padding:13px 19px;background:var(--cyan);color:#04121b;font-weight:500;
+    box-shadow:0 10px 30px rgba(0,0,0,0.45);
+    transition:transform .2s ease;
+  }
+  .float-reg:hover{transform:translateY(-3px)}
+  .float-reg .led{width:6px;height:6px;border-radius:50%;background:#04121b}
+  @media (max-width:860px){.float-reg{right:14px;bottom:14px;font-size:0.62rem;padding:11px 15px}}
+
+  /* ---- reveal ---- */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  /* ================= LIGHT MODE ================= */
+  html[data-theme="light"]{
+    --ink:#f4f1e8;--ink-2:#ece8dc;--ink-3:#e3dece;--ink-4:#d3ccb8;
+    --bone:#0a1a22;--bone-2:#36505a;--bone-3:#5d7682;--muted:#7e919a;
+    --cyan:#0b7f8f;--cyan-deep:#0a606d;--teal:#0f4f5e;
+    --gold:#9a6f16;--sand:#7d5f1d;--jade:#0f9d63;
+    --line:rgba(10,26,34,0.12);--line-2:rgba(10,26,34,0.2);
+  }
+  html[data-theme="light"] body{background-image:radial-gradient(circle, rgba(10,26,34,0.05) 1px, transparent 1px)}
+  html[data-theme="light"] body::before{opacity:0.05}
+  /* image-led regions stay dark for legibility */
+  html[data-theme="light"] .hero,
+  html[data-theme="light"] nav.top,
+  html[data-theme="light"] .band{
+    --ink:#04121b;--ink-2:#071b26;--ink-3:#0b2633;--ink-4:#123443;
+    --bone:#f2efe4;--bone-2:#c2d2d8;--bone-3:#86a3ad;--muted:#4f6e79;
+    --cyan:#3ed8e6;--cyan-deep:#17919f;--gold:#d8b26a;
+    --line:rgba(242,239,228,0.08);--line-2:rgba(242,239,228,0.16);
+  }
+  html[data-theme="light"] .btn-register,
+  html[data-theme="light"] .float-reg{color:#04121b}
+  html[data-theme="light"] .dl:hover{color:#f4f1e8}
+  html[data-theme="light"] .map-frame iframe{filter:none}
+  html[data-theme="light"] .orgs .og .logo{background:transparent;padding:0}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6WBF8C3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-cross" id="cursorCross">
+  <span class="b tl"></span><span class="b tr"></span><span class="b bl"></span><span class="b br"></span>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <a class="mark" href="#top">
+    <span class="led"></span>
+    ISET<span class="slash">/</span>SEM<span class="slash">·</span>03.11.26
+  </a>
+  <ul>
+    <li><a href="#about"><span class="n">01</span>overview</a></li>
+    <li><a href="#lecturer"><span class="n">02</span>lecturer</a></li>
+    <li><a href="#programme"><span class="n">03</span>programme</a></li>
+    <li><a href="#venue"><span class="n">04</span>venue</a></li>
+    <li><a href="#poster"><span class="n">05</span>poster</a></li>
+    <li><a href="#support"><span class="n">06</span>support</a></li>
+    <li><a href="index.html"><span class="n">↗</span>ISET 2026</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme">☀</button>
+    <a class="nav-reg" href="https://forms.gle/96g5YcpCAmvWZYcT7" target="_blank" rel="noopener">
+      <span class="led"></span>申込 / Register
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+
+  <div class="bolt" aria-hidden="true">
+    <svg viewBox="0 0 300 1000" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3ed8e6" stop-opacity="0"/>
+          <stop offset="18%" stop-color="#3ed8e6" stop-opacity="0.95"/>
+          <stop offset="72%" stop-color="#17919f" stop-opacity="0.75"/>
+          <stop offset="100%" stop-color="#17919f" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g fill="none" stroke="url(#bg1)" stroke-linecap="round">
+        <path class="b-glow" stroke-width="9" d="M168 0 L150 150 L182 198 L140 330 L176 388 L132 520 L170 574 L128 700 L158 760 L120 900 L140 1000"/>
+        <path class="b-core" stroke-width="2" d="M168 0 L150 150 L182 198 L140 330 L176 388 L132 520 L170 574 L128 700 L158 760 L120 900 L140 1000"/>
+        <path class="b-core" stroke-width="1" stroke-opacity="0.5" d="M182 198 L228 262 L206 318"/>
+        <path class="b-core" stroke-width="1" stroke-opacity="0.5" d="M132 520 L86 578 L104 634"/>
+      </g>
+      <g fill="#3ed8e6" fill-opacity="0.55">
+        <circle cx="150" cy="150" r="5"/><circle cx="140" cy="330" r="4"/>
+        <circle cx="132" cy="520" r="5"/><circle cx="128" cy="700" r="4"/>
+        <circle cx="120" cy="900" r="5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="jp-mark">東京国際エジプト学セミナー（ISET）</span>
+      <span>International Seminar of Egyptology in Tokyo · 2026</span>
+      <span class="rule"></span>
+    </div>
+
+    <div class="badge-row">
+      <span class="badge solid"><span class="b-dot"></span>2026 · 11 · 03</span>
+      <span class="badge gold"><span class="b-dot"></span>文化の日 · Culture Day</span>
+      <span class="badge"><span class="b-dot"></span>Lecture in English</span>
+      <span class="badge"><span class="b-dot"></span>3 Parts · 13:30–18:00 JST</span>
+      <span class="badge"><span class="b-dot"></span>Hongō Campus · U. of Tokyo</span>
+      <span class="badge"><span class="b-dot"></span>申込制 · Registration</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="display">
+          <span class="ln glow">エジプトの諸文字は、</span>
+          <span class="ln glow">エジプト語の表記に</span>
+          <span class="ln"><span class="cy">どこまで適していたのか</span></span>
+        </h1>
+        <p class="title-en" lang="en">How well adapted were the Egyptian writings for transcribing Egyptian?</p>
+        <p class="title-note">
+          <span>英語での講演 / Lecture in English</span>
+          <span class="sep">//</span>
+          <span>日本時間 / JST</span>
+        </p>
+
+        <div class="hero-lect">
+          <img src="images/winand/winand-portrait.jpg" alt="Prof. Jean Winand" />
+          <div>
+            <span class="k">講師 / Lecturer</span>
+            <div class="nm" lang="en">Prof. Jean Winand</div>
+            <div class="nm-jp">ジャン・ヴィナン先生 — リエージュ大学（ベルギー）</div>
+          </div>
+        </div>
+
+        <a class="btn-register" href="https://forms.gle/96g5YcpCAmvWZYcT7" target="_blank" rel="noopener">
+          参加申込 · Register
+          <span class="arrow">→</span>
+          <span class="sub">Google Form</span>
+        </a>
+      </div>
+
+      <div>
+        <div class="disc">
+          <span class="yr">2026</span>
+          <span class="dt">11.3</span>
+          <span class="dow">火・祝 <span class="en">/ TUE</span></span>
+          <span class="hol">文化の日 · Culture Day</span>
+          <span class="time">13:30 – 18:00</span>
+          <span class="tz">日本時間 / JST</span>
+        </div>
+        <div class="countdown" id="cd" aria-hidden="true">
+          <span class="cd"><span class="v" id="cdD">–</span><span class="k">days</span></span>
+          <span class="cd"><span class="v" id="cdH">–</span><span class="k">hrs</span></span>
+          <span class="cd"><span class="v" id="cdM">–</span><span class="k">min</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="cell">
+        <span class="k">// Date</span>
+        <span class="v">3 November 2026 (Tue)</span>
+        <span class="v-jp">2026年11月3日（火・祝）文化の日</span>
+      </div>
+      <div class="cell">
+        <span class="k">// Hours</span>
+        <span class="v">13:30 — 18:00 JST</span>
+        <span class="v-jp">全3部（第1・2部は講義75分＋質疑15分）</span>
+      </div>
+      <div class="cell">
+        <span class="k">// Venue</span>
+        <span class="v">Hongō Campus, U. of Tokyo · Lecture Hall No. 1</span>
+        <span class="v-jp">東京大学本郷キャンパス 法文2号館 2階 1番大教室</span>
+      </div>
+      <div class="cell">
+        <span class="k">// Admission</span>
+        <span class="v">Everyone welcome — students especially</span>
+        <span class="v-jp">どなたでも参加歓迎・学生大歓迎</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SCRIPT BAND ============ -->
+<div class="band" id="scripts">
+  <figure class="cel">
+    <img src="images/winand/script-hieroglyphic.jpg" alt="Hieroglyphic inscription" loading="lazy"/>
+    <figcaption class="cap"><span class="rn">Ⅰ</span><span class="jp-t">ヒエログリフ</span><span class="en-t">Hieroglyphic</span></figcaption>
+  </figure>
+  <figure class="cel">
+    <img src="images/winand/script-hieratic.jpg" alt="Hieratic manuscript" loading="lazy"/>
+    <figcaption class="cap"><span class="rn">Ⅱ</span><span class="jp-t">ヒエラティック</span><span class="en-t">Hieratic</span></figcaption>
+  </figure>
+  <figure class="cel">
+    <img src="images/winand/script-demotic.jpg" alt="Demotic manuscript" loading="lazy"/>
+    <figcaption class="cap"><span class="rn">Ⅲ</span><span class="jp-t">デモティック</span><span class="en-t">Demotic</span></figcaption>
+  </figure>
+  <figure class="cel">
+    <img src="images/winand/script-coptic.jpg" alt="Coptic manuscript" loading="lazy"/>
+    <figcaption class="cap"><span class="rn">Ⅳ</span><span class="jp-t">コプト文字</span><span class="en-t">Coptic</span></figcaption>
+  </figure>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="num">§ 01 // OVERVIEW</div>
+      <h2>Four scripts, <em>one language,</em><br/><span class="cy">three thousand years.</span></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">四つの文字、ひとつの言語、三千年。</span></span>
+    </div>
+
+    <div class="about-grid rv">
+      <p class="lead">エジプト語は、その長い歴史のなかで <span class="cy">ヒエログリフ・ヒエラティック・デモティック・コプト文字</span> という四つの書記体系によって書き記されてきました。本セミナーは、それぞれの文字が <em>エジプト語という言語</em> を写し取る手段としてどこまで適していたのかを問い直します。</p>
+      <div class="body">
+        <p lang="en">Over more than three millennia the Egyptian language was committed to writing in four systems — <span class="term">hieroglyphic</span>, <span class="term">hieratic</span>, <span class="term">demotic</span> and <span class="term">Coptic</span>. In three parts, <strong>Prof. Jean Winand</strong> (University of Liège) asks how well each of them was actually suited to the task of transcribing Egyptian.</p>
+        <p lang="en"><strong>Part I</strong> surveys the four writing systems themselves. <strong>Part II</strong> turns to the hieroglyphs of the Graeco-Roman period and to their reception by Greek and Roman authors. <strong>Part III</strong> moves to digital humanities — <span class="term">Ramses Online</span> and the Egyptological DH projects pursued at the University of Liège.</p>
+        <p class="jp-p">第1部では四つの文字体系そのものを概観し、第2部ではグレコ・ローマン期のヒエログリフとギリシア・ローマの著述家による受容を扱い、第3部ではリエージュ大学のエジプト学デジタル・ヒューマニティーズ（Ramses Online ほか）に話題を移します。第1部・第2部は講義75分ののち質疑15分を設けます。</p>
+        <p lang="en">The seminar is held on site at the Hongō Campus of the University of Tokyo and is delivered in English.</p>
+      </div>
+    </div>
+
+    <div class="callout rv">
+      <div class="big">どなたでも<br/>参加歓迎<span class="s">学生大歓迎</span></div>
+      <div class="txt">
+        <p class="jp-p">エジプト学・言語学・歴史学・考古学などに興味がある方ならどなたでもご参加いただけます。</p>
+        <p lang="en">Everyone welcome — students especially. Open to anyone interested in Egyptology, linguistics, history or archaeology. Please register in advance via the form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LECTURER ============ -->
+<section id="lecturer" class="alt">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="num">§ 02 // LECTURER</div>
+      <h2>The speaker, <em>and the chairs.</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">講師と司会。</span></span>
+    </div>
+
+    <div class="lect rv">
+      <div class="shot">
+        <img src="images/winand/winand-portrait.jpg" alt="Portrait of Prof. Jean Winand" loading="lazy"/>
+      </div>
+      <div>
+        <div class="nm" lang="en">Prof. Jean Winand</div>
+        <div class="nm-jp">ジャン・ヴィナン先生</div>
+        <div class="aff">
+          <p class="jp-p">リエージュ大学（ベルギー）教授（エジプト学）・元副学長・ベルギー王立アカデミー会員</p>
+          <p class="en-p" lang="en">Professor of Egyptology, University of Liège (Belgium); former Vice-Rector; Member of the Royal Academy of Belgium</p>
+        </div>
+        <div class="tags">
+          <span>Egyptology</span><span>Egyptian linguistics</span><span>Writing systems</span><span>Digital humanities</span><span>Ramses Online</span>
+        </div>
+
+        <div class="chairs">
+          <div class="ch">
+            <span class="k">司会 / Chair · Parts I–II</span>
+            <div class="nm2">宮川 創 <span class="rom" lang="en">So Miyagawa</span></div>
+            <div class="af" lang="en">Associate Professor, University of Tsukuba / 筑波大学准教授</div>
+          </div>
+          <div class="ch">
+            <span class="k">司会 / Chair · Part III</span>
+            <div class="nm2">小川 潤 <span class="rom" lang="en">Jun Ogawa</span></div>
+            <div class="af" lang="en">Assistant Professor, The University of Tokyo / 東京大学助教</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMME ============ -->
+<section id="programme">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="num">§ 03 // PROGRAMME</div>
+      <h2>Tuesday, <em>3 November 2026.</em><br/><span class="cy">13:30 — 18:00 JST</span></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">プログラム（2026年11月3日 火・祝）</span></span>
+    </div>
+
+    <div class="prog rv">
+      <div class="row">
+        <div class="when">
+          <span class="t">13:30 – 15:00</span>
+          <span class="part"><span class="jpn">第1部</span> / Part I</span>
+        </div>
+        <div class="what">
+          <div class="ti-jp">古代エジプトの文字体系——ヒエログリフ・ヒエラティック・デモティック・コプト文字</div>
+          <div class="ti-en" lang="en">The Egyptian writing systems: hieroglyphic, hieratic, demotic and Coptic</div>
+          <div class="chair"><span class="lbl">Chair</span><span class="jpn">宮川 創 So Miyagawa</span>（筑波大学准教授）</div>
+        </div>
+      </div>
+
+      <div class="row brk">
+        <div class="when"><span class="t">15:00 – 15:30</span></div>
+        <div class="what"><div class="ti-jp">休憩 / Break</div></div>
+      </div>
+
+      <div class="row">
+        <div class="when">
+          <span class="t">15:30 – 17:00</span>
+          <span class="part"><span class="jpn">第2部</span> / Part II</span>
+        </div>
+        <div class="what">
+          <div class="ti-jp">グレコ・ローマン期のヒエログリフ——ギリシア・ローマの著述家による受容とともに</div>
+          <div class="ti-en" lang="en">Hieroglyphs in the Graeco-Roman period and their reception by Greek and Roman authors</div>
+          <div class="chair"><span class="lbl">Chair</span><span class="jpn">宮川 創 So Miyagawa</span>（筑波大学准教授）</div>
+        </div>
+      </div>
+
+      <div class="row brk">
+        <div class="when"><span class="t">17:00 – 17:15</span></div>
+        <div class="what"><div class="ti-jp">休憩 / Break</div></div>
+      </div>
+
+      <div class="row">
+        <div class="when">
+          <span class="t">17:15 – 18:00</span>
+          <span class="part"><span class="jpn">第3部</span> / Part III</span>
+        </div>
+        <div class="what">
+          <div class="ti-jp">デジタル・ヒューマニティーズ：Ramses Online などリエージュ大学のエジプト学DH</div>
+          <div class="ti-en" lang="en">Digital Humanities: Ramses Online and Egyptological DH projects at the University of Liège</div>
+          <div class="chair"><span class="lbl">Chair</span><span class="jpn">小川 潤 Jun Ogawa</span>（東京大学助教）</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="prog-note"><span class="jpn">第1・2部：講義75分＋質疑15分</span> &nbsp;//&nbsp; <span lang="en">Parts I–II: 75-minute lecture followed by 15-minute discussion</span></p>
+  </div>
+</section>
+
+<!-- ============ VENUE ============ -->
+<section id="venue" class="alt">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="num">§ 04 // VENUE &amp; ACCESS</div>
+      <h2>Hongō, <em>under the ginkgos.</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">本郷、銀杏並木の先に。</span></span>
+    </div>
+
+    <div class="venue-grid rv">
+      <div>
+        <div class="vname">東京大学 本郷キャンパス<br/>法文2号館 2階 <span class="rm">1番大教室</span></div>
+        <div class="vname-en" lang="en">Lecture Hall No. 1 (2F), Faculty of Law &amp; Letters Building 2,<br/>Hongō Campus, The University of Tokyo</div>
+        <div class="vaddr">
+          〒113-0033 東京都文京区本郷 7-3-1
+          <span class="hint">※ 正門から安田講堂へ向かう銀杏並木沿い<br/><span lang="en">Along the ginkgo avenue running from the Main Gate towards Yasuda Auditorium</span></span>
+        </div>
+
+        <div class="access">
+          <div class="st">
+            <span class="nmj">本郷三丁目駅 <span class="lines">丸ノ内線・大江戸線</span><span class="en-s" lang="en">Hongō-sanchōme Stn · Marunouchi / Ōedo lines</span></span>
+            <span class="walk">徒歩 約8分 / 8 min</span>
+          </div>
+          <div class="st">
+            <span class="nmj">東大前駅 <span class="lines">南北線</span><span class="en-s" lang="en">Tōdaimae Stn · Namboku line</span></span>
+            <span class="walk">徒歩 約10分 / 10 min</span>
+          </div>
+          <div class="st">
+            <span class="nmj">根津駅 <span class="lines">千代田線</span><span class="en-s" lang="en">Nezu Stn · Chiyoda line</span></span>
+            <span class="walk">徒歩 約10分 / 10 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%20%E6%B3%95%E6%96%872%E5%8F%B7%E9%A4%A8&z=17&hl=ja&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="東京大学 法文2号館 — Google Map"></iframe>
+        </div>
+        <div class="map-links">
+          <a href="https://www.u-tokyo.ac.jp/campusmap/cam01_01_02_j.html" target="_blank" rel="noopener">キャンパスマップ / Campus map →</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%20%E6%B3%95%E6%96%872%E5%8F%B7%E9%A4%A8" target="_blank" rel="noopener">Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POSTER ============ -->
+<section id="poster">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="num">§ 05 // POSTER</div>
+      <h2>Print it, <em>pin it, pass it on.</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">ポスターのダウンロード。</span></span>
+    </div>
+
+    <div class="poster-grid rv">
+      <a class="shot" href="ISET_Winand_20261103_poster.pdf" target="_blank" rel="noopener">
+        <img src="images/winand/poster-preview.jpg" alt="Seminar poster: How well adapted were the Egyptian writings for transcribing Egyptian? Prof. Jean Winand, 3 November 2026" loading="lazy"/>
+      </a>
+      <div class="txt">
+        <p class="jp-p" style="font-family:'Noto Serif JP',serif;color:var(--bone)">掲示・配布用のポスター（PDF）です。研究室や掲示板でのご共有を歓迎します。</p>
+        <p lang="en">A print-ready PDF of the seminar poster. Please feel free to circulate it in your department, on noticeboards, or on social media.</p>
+        <a class="dl" href="ISET_Winand_20261103_poster.pdf" target="_blank" rel="noopener">ポスターPDF / Download poster ↓</a>
+        <p style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--bone-3)">Design · 宮川 創 So Miyagawa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORGANISERS & SUPPORT ============ -->
+<section id="support" class="alt">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="num">§ 06 // ORGANISERS &amp; SUPPORT</div>
+      <h2>Held by, <em>and with thanks to —</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">主催と助成。</span></span>
+    </div>
+
+    <div class="orgs rv">
+      <div class="og">
+        <img class="logo" src="images/winand/logo-rcwac.jpg" alt="西アジア文明研究センター / Research Center for West Asian Civilization" loading="lazy"/>
+        <div class="jp-n">筑波大学 西アジア文明研究センター</div>
+        <div class="en-n" lang="en">Research Center for West Asian Civilization,<br/>University of Tsukuba</div>
+      </div>
+      <div class="og">
+        <div class="jp-n">東京大学大学院人文社会系研究科附属<br/>次世代人文学開発センター 人文情報学部門</div>
+        <div class="en-n" lang="en">Digital Humanities Division, Center for Evolving Humanities,<br/>Graduate School of Humanities and Sociology,<br/>The University of Tokyo</div>
+      </div>
+    </div>
+
+    <div class="grants rv">
+      <div class="grant">
+        <div class="gid">[01] · 村田学術振興・教育財団 · Murata Science and Education Foundation</div>
+        <div class="gtitle">2026年度研究助成「RAG技術と語彙意味データベースによる古代エジプト語全段階の統合的機械翻訳・テキスト解析基盤の構築」</div>
+        <div class="gtitle-en" lang="en">Research grant (FY2026): Building an integrated machine-translation and text-analysis infrastructure for all stages of Ancient Egyptian using RAG and a lexical-semantic database</div>
+        <div class="gmeta">
+          <span class="chip">研究助成 · Research Grant</span>
+          <span class="chip pi">代表 · PI · 宮川 創 So Miyagawa</span>
+        </div>
+      </div>
+      <div class="grant">
+        <div class="gid">[02] · 日本学術振興会 · JSPS KAKENHI · JP26K03871</div>
+        <div class="gtitle">科研費 基盤研究 (C)「古コプト文字エジプト語文献における咽頭音消失プロセスの包括的解明」</div>
+        <div class="gtitle-en" lang="en">Grant-in-Aid for Scientific Research (C): A comprehensive account of the loss of pharyngeals in Old Coptic Egyptian texts</div>
+        <div class="gmeta">
+          <span class="chip">基盤研究 (C) · Grant-in-Aid</span>
+          <span class="chip pi">代表 · PI · 宮川 創 So Miyagawa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-big">
+      See you in <span class="accent">Hongō</span>,<br/>
+      <span class="amb">3 November ·</span> 2026.
+    </div>
+    <div class="foot-row">
+      <div>ISET // 東京国際エジプト学セミナー</div>
+      <div>03.11.2026 // 13:30 — 18:00 JST</div>
+      <div class="jpn">東京大学本郷キャンパス 法文2号館 2階 1番大教室</div>
+      <div><a href="index.html">← ISET 2026 Symposium</a></div>
+      <div><a href="https://forms.gle/96g5YcpCAmvWZYcT7" target="_blank" rel="noopener">Register →</a></div>
+      <div class="end">Lecture in English</div>
+    </div>
+  </div>
+</footer>
+
+<a class="float-reg" href="https://forms.gle/96g5YcpCAmvWZYcT7" target="_blank" rel="noopener">
+  <span class="led"></span>申込 / Register →
+</a>
+
+<script>
+  // ====== THEME TOGGLE ======
+  (function(){
+    var b = document.getElementById('themeToggle');
+    if(!b) return;
+    function cur(){ return document.documentElement.getAttribute('data-theme') || 'dark'; }
+    function paint(){
+      var t = cur();
+      b.textContent = (t === 'light') ? '☾' : '☀';
+      b.setAttribute('aria-label', t === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+    }
+    paint();
+    b.addEventListener('click', function(){
+      var next = cur() === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try{ localStorage.setItem('iset-theme', next); }catch(e){}
+      paint();
+    });
+  })();
+
+  // ====== CUSTOM CURSOR ======
+  (function(){
+    if(window.matchMedia && matchMedia('(max-width:860px)').matches) return;
+    var c = document.getElementById('cursor');
+    var r = document.getElementById('cursorCross');
+    if(!c || !r) return;
+    var x=0, y=0, rx=0, ry=0;
+    window.addEventListener('mousemove', function(e){
+      x = e.clientX; y = e.clientY;
+      c.style.transform = 'translate('+x+'px,'+y+'px) translate(-50%,-50%)';
+    });
+    function tick(){
+      rx += (x - rx) * 0.18;
+      ry += (y - ry) * 0.18;
+      r.style.transform = 'translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
+      requestAnimationFrame(tick);
+    }
+    tick();
+    document.querySelectorAll('a, button, .row, .cel, .grant, .st').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ r.style.width='84px'; r.style.height='84px'; });
+      el.addEventListener('mouseleave', function(){ r.style.width='58px'; r.style.height='58px'; });
+    });
+  })();
+
+  // ====== COUNTDOWN TO 2026-11-03 13:30 JST ======
+  (function(){
+    var d = document.getElementById('cdD'), h = document.getElementById('cdH'), m = document.getElementById('cdM');
+    if(!d) return;
+    var target = Date.UTC(2026, 10, 3, 4, 30, 0); // 13:30 JST = 04:30 UTC
+    function tick(){
+      var diff = target - Date.now();
+      if(diff <= 0){
+        var box = document.getElementById('cd');
+        if(box) box.innerHTML = '<span class="cd" style="min-width:auto;padding:9px 16px"><span class="v">開催中 / NOW</span></span>';
+        return;
+      }
+      var mins = Math.floor(diff/60000);
+      d.textContent = Math.floor(mins/1440);
+      h.textContent = Math.floor(mins%1440/60);
+      m.textContent = mins%60;
+      setTimeout(tick, 30000);
+    }
+    tick();
+  })();
+
+  // ====== REVEAL ON SCROLL ======
+  (function(){
+    var els = document.querySelectorAll('.rv');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
