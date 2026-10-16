@@ -169,15 +169,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='560' viewBox='0 0 560 560'><g fill='none' stroke='%23d8b26a' stroke-opacity='0.16' stroke-width='1'><path d='M-40 120 C 110 40, 230 200, 360 120 S 600 40, 640 130'/><path d='M-40 170 C 110 90, 230 250, 360 170 S 600 90, 640 180'/><path d='M-40 220 C 110 140, 230 300, 360 220 S 600 140, 640 230'/><path d='M-40 330 C 130 260, 220 420, 370 340 S 590 260, 640 350'/><path d='M-40 385 C 130 315, 220 475, 370 395 S 590 315, 640 405'/><path d='M-40 440 C 130 370, 220 530, 370 450 S 590 370, 640 460'/></g></svg>");
     background-size:560px 560px;
   }
-  /* the bolt — echoes the poster's lightning seam */
-  .bolt{
-    position:absolute;top:-6%;left:50%;width:min(620px,74vw);height:116%;
-    transform:translateX(-46%);pointer-events:none;z-index:1;opacity:0.85;
+  /* ---- the Nile: delta (north) at the top, Lake Nasser (south) at the foot ---- */
+  .nile{
+    position:absolute;top:74px;bottom:0;right:17%;
+    width:min(430px,34vw);pointer-events:none;z-index:1;
   }
-  .bolt svg{width:100%;height:100%}
-  .bolt .b-glow{filter:blur(9px);opacity:0.55}
-  .bolt .b-core{opacity:0.95}
-  @media (max-width:900px){.bolt{opacity:0.35;left:84%}}
+  .nile svg{width:100%;height:100%;display:block}
+  .nile .valley{filter:blur(13px)}
+  .nile .glow{filter:blur(5px)}
+  .nile .flow{
+    stroke-dasharray:4 34;
+    animation:nileflow 11s linear infinite;
+  }
+  @keyframes nileflow{to{stroke-dashoffset:-380}}
+  .nile .site{animation:sitepulse 4.5s ease-in-out infinite}
+  .nile .site:nth-of-type(2){animation-delay:.9s}
+  .nile .site:nth-of-type(3){animation-delay:1.8s}
+  .nile .site:nth-of-type(4){animation-delay:2.7s}
+  .nile .site:nth-of-type(5){animation-delay:3.6s}
+  @keyframes sitepulse{0%,100%{opacity:.85}50%{opacity:.35}}
+  .nile .label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:1.6px;fill:#3ed8e6;fill-opacity:0.58;
+  }
+  @media (max-width:1060px){.nile{top:84px;right:-5%;width:min(360px,50vw);opacity:0.55}}
+  @media (max-width:700px){.nile{right:-14%;width:300px;opacity:0.34}.nile .label{display:none}}
 
   .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%}
   .eyebrow{
@@ -610,26 +626,122 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
 
-  <div class="bolt" aria-hidden="true">
-    <svg viewBox="0 0 300 1000" preserveAspectRatio="none">
+  <!-- The Nile — the Delta and the Mediterranean at the top (north), Aswan and Lake Nasser at the foot (south) -->
+  <div class="nile" aria-hidden="true">
+    <svg viewBox="0 -70 400 1110" preserveAspectRatio="xMidYMid meet">
       <defs>
-        <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="nileFlow" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#17919f" stop-opacity="0.3"/>
+          <stop offset="22%" stop-color="#2bb9cb" stop-opacity="0.85"/>
+          <stop offset="62%" stop-color="#3ed8e6" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#7defff" stop-opacity="0.9"/>
+        </linearGradient>
+        <radialGradient id="nileSeaG" gradientUnits="userSpaceOnUse" cx="200" cy="4" r="208">
+          <stop offset="0%" stop-color="#3ed8e6" stop-opacity="0.26"/>
+          <stop offset="58%" stop-color="#3ed8e6" stop-opacity="0.11"/>
+          <stop offset="100%" stop-color="#3ed8e6" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="coastFade" gradientUnits="userSpaceOnUse" x1="-30" y1="0" x2="430" y2="0">
           <stop offset="0%" stop-color="#3ed8e6" stop-opacity="0"/>
-          <stop offset="18%" stop-color="#3ed8e6" stop-opacity="0.95"/>
-          <stop offset="72%" stop-color="#17919f" stop-opacity="0.75"/>
-          <stop offset="100%" stop-color="#17919f" stop-opacity="0"/>
+          <stop offset="24%" stop-color="#3ed8e6" stop-opacity="0.5"/>
+          <stop offset="76%" stop-color="#3ed8e6" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#3ed8e6" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <g fill="none" stroke="url(#bg1)" stroke-linecap="round">
-        <path class="b-glow" stroke-width="9" d="M168 0 L150 150 L182 198 L140 330 L176 388 L132 520 L170 574 L128 700 L158 760 L120 900 L140 1000"/>
-        <path class="b-core" stroke-width="2" d="M168 0 L150 150 L182 198 L140 330 L176 388 L132 520 L170 574 L128 700 L158 760 L120 900 L140 1000"/>
-        <path class="b-core" stroke-width="1" stroke-opacity="0.5" d="M182 198 L228 262 L206 318"/>
-        <path class="b-core" stroke-width="1" stroke-opacity="0.5" d="M132 520 L86 578 L104 634"/>
+
+      <!-- Mediterranean, bleeding past the frame so no edge shows -->
+      <path fill="url(#nileSeaG)"
+        d="M-90 -200 L490 -200 L490 44 C446 42 400 50 356 54 C322 50 292 60 264 64
+           C232 69 200 72 170 70 C134 68 102 74 72 66 C56 62 38 58 22 56 C-20 52 -50 56 -90 50 Z"/>
+      <path fill="none" stroke="url(#coastFade)" stroke-width="1.4"
+        d="M-90 50 C-50 56 -20 52 22 56 C38 58 56 62 72 66 C102 74 134 68 170 70
+           C200 72 232 69 264 64 C292 60 322 50 356 54 C400 50 446 42 490 44"/>
+
+      <!-- cultivated valley + delta, as a soft halo -->
+      <g class="valley" fill="none" stroke="#2bb9cb" stroke-opacity="0.2" stroke-linecap="round">
+        <path stroke-width="32"
+          d="M200 212 C206 240 208 258 203 282 C198 310 196 324 197 342 C198 366 190 386 186 406
+             C182 428 190 452 197 472 C203 490 206 500 214 508 C228 518 243 520 245 532
+             C247 546 232 556 222 570 C214 582 208 592 206 604 C204 620 208 634 211 648
+             C214 664 218 678 217 692 C216 708 212 720 212 732"/>
+        <path stroke-width="26" d="M200 214 C182 184 152 136 112 64"/>
+        <path stroke-width="26" d="M200 214 C222 180 258 126 284 62"/>
+        <path stroke-width="18" d="M164 155 C158 128 156 98 152 66"/>
+        <path stroke-width="20" d="M199 268 C180 273 160 281 146 291"/>
+        <path stroke-width="32" d="M212 732 C205 760 210 782 200 806 C190 830 196 856 186 884 C178 908 182 926 176 944"/>
       </g>
-      <g fill="#3ed8e6" fill-opacity="0.55">
-        <circle cx="150" cy="150" r="5"/><circle cx="140" cy="330" r="4"/>
-        <circle cx="132" cy="520" r="5"/><circle cx="128" cy="700" r="4"/>
-        <circle cx="120" cy="900" r="5"/>
+
+      <!-- Delta plain -->
+      <path fill="#2bb9cb" fill-opacity="0.1"
+        d="M200 214 C182 184 152 136 112 64 C156 72 220 72 284 62 C258 126 222 180 200 214 Z"/>
+
+      <!-- minor distributaries -->
+      <g fill="none" stroke="#3ed8e6" stroke-opacity="0.38" stroke-width="1.8" stroke-linecap="round">
+        <path d="M164 155 C158 128 156 98 152 66"/>
+        <path d="M140 114 C132 100 126 84 122 64"/>
+        <path d="M240 149 C238 120 234 94 230 66"/>
+        <path d="M263 108 C268 96 270 80 272 62"/>
+      </g>
+
+      <!-- delta lagoons -->
+      <g fill="#3ed8e6" fill-opacity="0.22">
+        <ellipse cx="246" cy="70" rx="22" ry="6"/>
+        <ellipse cx="158" cy="72" rx="16" ry="5"/>
+      </g>
+
+      <!-- Bahr Yusuf and Lake Qarun (Faiyum) -->
+      <path fill="none" stroke="#3ed8e6" stroke-opacity="0.55" stroke-width="2.4" stroke-linecap="round"
+        d="M199 268 C180 273 160 281 146 291"/>
+      <ellipse cx="133" cy="293" rx="17" ry="5.5" transform="rotate(-14 133 293)"
+        fill="#3ed8e6" fill-opacity="0.4"/>
+
+      <!-- main course: the Delta apex down to Aswan -->
+      <g fill="none" stroke-linecap="round">
+        <path class="glow" stroke="url(#nileFlow)" stroke-opacity="0.6" stroke-width="13"
+          d="M200 212 C206 240 208 258 203 282 C198 310 196 324 197 342 C198 366 190 386 186 406
+             C182 428 190 452 197 472 C203 490 206 500 214 508 C228 518 243 520 245 532
+             C247 546 232 556 222 570 C214 582 208 592 206 604 C204 620 208 634 211 648
+             C214 664 218 678 217 692 C216 708 212 720 212 732"/>
+        <path stroke="url(#nileFlow)" stroke-width="4.6"
+          d="M200 212 C206 240 208 258 203 282 C198 310 196 324 197 342 C198 366 190 386 186 406
+             C182 428 190 452 197 472 C203 490 206 500 214 508 C228 518 243 520 245 532
+             C247 546 232 556 222 570 C214 582 208 592 206 604 C204 620 208 634 211 648
+             C214 664 218 678 217 692 C216 708 212 720 212 732"/>
+        <path class="flow" stroke="#d6faff" stroke-opacity="0.8" stroke-width="2.3"
+          d="M212 732 C212 720 216 708 217 692 C218 678 214 664 211 648 C208 634 204 620 206 604
+             C208 592 214 582 222 570 C232 556 247 546 245 532 C243 520 228 518 214 508
+             C206 500 203 490 197 472 C190 452 182 428 186 406 C190 386 198 366 197 342
+             C196 324 198 310 203 282 C208 258 206 240 200 212"/>
+        <!-- delta branches: Rosetta (west) and Damietta (east) -->
+        <path stroke="url(#nileFlow)" stroke-width="3.6" d="M200 214 C182 184 152 136 112 64"/>
+        <path stroke="url(#nileFlow)" stroke-width="3.6" d="M200 214 C222 180 258 126 284 62"/>
+      </g>
+
+      <!-- Lake Nasser -->
+      <path class="glow" fill="none" stroke="#2bb9cb" stroke-opacity="0.45" stroke-width="20" stroke-linecap="round"
+        d="M212 732 C205 760 210 782 200 806 C190 830 196 856 186 884 C178 908 182 926 176 944"/>
+      <path fill="none" stroke="#3ed8e6" stroke-opacity="0.62" stroke-width="12" stroke-linecap="round"
+        d="M212 732 C205 760 210 782 200 806 C190 830 196 856 186 884 C178 908 182 926 176 944"/>
+      <g fill="#3ed8e6" fill-opacity="0.32">
+        <ellipse cx="186" cy="800" rx="14" ry="5" transform="rotate(-62 186 800)"/>
+        <ellipse cx="206" cy="868" rx="12" ry="4.5" transform="rotate(-58 206 868)"/>
+        <ellipse cx="166" cy="906" rx="11" ry="4" transform="rotate(-70 166 906)"/>
+      </g>
+
+      <!-- sites -->
+      <g fill="#7defff">
+        <circle class="site" cx="112" cy="64" r="3.4"/>
+        <circle class="site" cx="198" cy="226" r="3.4"/>
+        <circle class="site" cx="193" cy="478" r="3.4"/>
+        <circle class="site" cx="222" cy="570" r="3.7"/>
+        <circle class="site" cx="212" cy="732" r="3.4"/>
+      </g>
+      <g class="label">
+        <text x="101" y="68" text-anchor="end">ROSETTA</text>
+        <text x="211" y="230">MEMPHIS</text>
+        <text x="206" y="482">ABYDOS</text>
+        <text x="235" y="574">THEBES</text>
+        <text x="225" y="736">ASWAN</text>
       </g>
     </svg>
   </div>
