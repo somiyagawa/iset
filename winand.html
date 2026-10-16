@@ -90,6 +90,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cursor-cross .b.tr{top:0;right:0;border-left:none;border-bottom:none}
   .cursor-cross .b.bl{bottom:0;left:0;border-right:none;border-top:none}
   .cursor-cross .b.br{bottom:0;right:0;border-left:none;border-top:none}
+  .cursor,.cursor-cross{opacity:0;transition:opacity .35s ease, width .3s, height .3s}
+  body.cur-on .cursor,body.cur-on .cursor-cross{opacity:1}
   @media (max-width:860px){body{cursor:auto}.cursor,.cursor-cross{display:none}}
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -557,7 +559,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   html[data-theme="light"] .dl:hover{color:#f4f1e8}
   html[data-theme="light"] .map-frame iframe{filter:none}
   html[data-theme="light"] .orgs .og .logo{background:transparent;padding:0}
+  @media (max-width:560px){
+    .nav-reg{display:none}
+    section{padding:72px 20px}
+    .hero{padding:100px 20px 52px}
+    footer{padding:64px 20px 36px}
+    .sec-head{margin-bottom:34px}
+    .callout{padding:20px}
+    .orgs .og{padding:20px 18px}
+    .grant{padding:18px 18px}
+  }
 </style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -583,7 +596,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#venue"><span class="n">04</span>venue</a></li>
     <li><a href="#poster"><span class="n">05</span>poster</a></li>
     <li><a href="#support"><span class="n">06</span>support</a></li>
-    <li><a href="index.html"><span class="n">↗</span>ISET 2026</a></li>
+    <li><a href="index.html"><span class="n">↗</span>top</a></li>
+    <li><a href="iset2026.html"><span class="n">↗</span>ISET 2026</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme">☀</button>
@@ -632,7 +646,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="badge gold"><span class="b-dot"></span>文化の日 · Culture Day</span>
       <span class="badge"><span class="b-dot"></span>Lecture in English</span>
       <span class="badge"><span class="b-dot"></span>3 Parts · 13:30–18:00 JST</span>
-      <span class="badge"><span class="b-dot"></span>Hongō Campus · U. of Tokyo</span>
+      <span class="badge"><span class="b-dot"></span>Hongo Campus · U. of Tokyo</span>
       <span class="badge"><span class="b-dot"></span>申込制 · Registration</span>
     </div>
 
@@ -696,7 +710,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="cell">
         <span class="k">// Venue</span>
-        <span class="v">Hongō Campus, U. of Tokyo · Lecture Hall No. 1</span>
+        <span class="v">Hongo Campus, U. of Tokyo · Lecture Hall No. 1</span>
         <span class="v-jp">東京大学本郷キャンパス 法文2号館 2階 1番大教室</span>
       </div>
       <div class="cell">
@@ -743,7 +757,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p lang="en">Over more than three millennia the Egyptian language was committed to writing in four systems — <span class="term">hieroglyphic</span>, <span class="term">hieratic</span>, <span class="term">demotic</span> and <span class="term">Coptic</span>. In three parts, <strong>Prof. Jean Winand</strong> (University of Liège) asks how well each of them was actually suited to the task of transcribing Egyptian.</p>
         <p lang="en"><strong>Part I</strong> surveys the four writing systems themselves. <strong>Part II</strong> turns to the hieroglyphs of the Graeco-Roman period and to their reception by Greek and Roman authors. <strong>Part III</strong> moves to digital humanities — <span class="term">Ramses Online</span> and the Egyptological DH projects pursued at the University of Liège.</p>
         <p class="jp-p">第1部では四つの文字体系そのものを概観し、第2部ではグレコ・ローマン期のヒエログリフとギリシア・ローマの著述家による受容を扱い、第3部ではリエージュ大学のエジプト学デジタル・ヒューマニティーズ（Ramses Online ほか）に話題を移します。第1部・第2部は講義75分ののち質疑15分を設けます。</p>
-        <p lang="en">The seminar is held on site at the Hongō Campus of the University of Tokyo and is delivered in English.</p>
+        <p lang="en">The seminar is held on site at the Hongo Campus of the University of Tokyo and is delivered in English.</p>
       </div>
     </div>
 
@@ -864,14 +878,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="sec-head rv">
       <div class="num">§ 04 // VENUE &amp; ACCESS</div>
-      <h2>Hongō, <em>under the ginkgos.</em></h2>
+      <h2>Hongo, <em>under the ginkgos.</em></h2>
       <span class="jp-sub"><span class="hash">#</span><span class="jp-t">本郷、銀杏並木の先に。</span></span>
     </div>
 
     <div class="venue-grid rv">
       <div>
         <div class="vname">東京大学 本郷キャンパス<br/>法文2号館 2階 <span class="rm">1番大教室</span></div>
-        <div class="vname-en" lang="en">Lecture Hall No. 1 (2F), Faculty of Law &amp; Letters Building 2,<br/>Hongō Campus, The University of Tokyo</div>
+        <div class="vname-en" lang="en">Lecture Hall No. 1 (2F), Faculty of Law &amp; Letters Building 2,<br/>Hongo Campus, The University of Tokyo</div>
         <div class="vaddr">
           〒113-0033 東京都文京区本郷 7-3-1
           <span class="hint">※ 正門から安田講堂へ向かう銀杏並木沿い<br/><span lang="en">Along the ginkgo avenue running from the Main Gate towards Yasuda Auditorium</span></span>
@@ -879,11 +893,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="access">
           <div class="st">
-            <span class="nmj">本郷三丁目駅 <span class="lines">丸ノ内線・大江戸線</span><span class="en-s" lang="en">Hongō-sanchōme Stn · Marunouchi / Ōedo lines</span></span>
+            <span class="nmj">本郷三丁目駅 <span class="lines">丸ノ内線・大江戸線</span><span class="en-s" lang="en">Hongo-sanchome Stn · Marunouchi / Oedo lines</span></span>
             <span class="walk">徒歩 約8分 / 8 min</span>
           </div>
           <div class="st">
-            <span class="nmj">東大前駅 <span class="lines">南北線</span><span class="en-s" lang="en">Tōdaimae Stn · Namboku line</span></span>
+            <span class="nmj">東大前駅 <span class="lines">南北線</span><span class="en-s" lang="en">Todaimae Stn · Namboku line</span></span>
             <span class="walk">徒歩 約10分 / 10 min</span>
           </div>
           <div class="st">
@@ -896,13 +910,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <div class="map-frame">
           <iframe
-            src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%20%E6%B3%95%E6%96%872%E5%8F%B7%E9%A4%A8&z=17&hl=ja&output=embed"
+            src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%B3%95%E6%96%872%E5%8F%B7%E9%A4%A8&z=17&hl=ja&output=embed"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             title="東京大学 法文2号館 — Google Map"></iframe>
         </div>
         <div class="map-links">
           <a href="https://www.u-tokyo.ac.jp/campusmap/cam01_01_02_j.html" target="_blank" rel="noopener">キャンパスマップ / Campus map →</a>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%20%E6%B3%95%E6%96%872%E5%8F%B7%E9%A4%A8" target="_blank" rel="noopener">Google Maps →</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%B3%95%E6%96%872%E5%8F%B7%E9%A4%A8" target="_blank" rel="noopener">Google Maps →</a>
         </div>
       </div>
     </div>
@@ -980,14 +994,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <div class="foot-inner">
     <div class="foot-big">
-      See you in <span class="accent">Hongō</span>,<br/>
+      See you in <span class="accent">Hongo</span>,<br/>
       <span class="amb">3 November ·</span> 2026.
     </div>
     <div class="foot-row">
       <div>ISET // 東京国際エジプト学セミナー</div>
       <div>03.11.2026 // 13:30 — 18:00 JST</div>
       <div class="jpn">東京大学本郷キャンパス 法文2号館 2階 1番大教室</div>
-      <div><a href="index.html">← ISET 2026 Symposium</a></div>
+      <div><a href="index.html">↑ ISET Top</a></div>
+      <div><a href="iset2026.html">← ISET 2026 Symposium</a></div>
       <div><a href="https://forms.gle/96g5YcpCAmvWZYcT7" target="_blank" rel="noopener">Register →</a></div>
       <div class="end">Lecture in English</div>
     </div>
@@ -1026,6 +1041,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(!c || !r) return;
     var x=0, y=0, rx=0, ry=0;
     window.addEventListener('mousemove', function(e){
+      if(!document.body.classList.contains('cur-on')) document.body.classList.add('cur-on');
       x = e.clientX; y = e.clientY;
       c.style.transform = 'translate('+x+'px,'+y+'px) translate(-50%,-50%)';
     });
