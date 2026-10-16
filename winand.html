@@ -171,8 +171,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   /* ---- the Nile: delta (north) at the top, Lake Nasser (south) at the foot ---- */
   .nile{
-    position:absolute;top:74px;bottom:0;right:17%;
-    width:min(430px,34vw);pointer-events:none;z-index:1;
+    position:absolute;top:56px;bottom:-32%;left:57%;transform:translateX(-50%);
+    width:min(620px,52vw);pointer-events:none;z-index:1;
   }
   .nile svg{width:100%;height:100%;display:block}
   .nile .valley{filter:blur(13px)}
@@ -189,11 +189,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nile .site:nth-of-type(5){animation-delay:3.6s}
   @keyframes sitepulse{0%,100%{opacity:.85}50%{opacity:.35}}
   .nile .label{
-    font-family:'JetBrains Mono',monospace;font-size:11px;
+    font-family:'JetBrains Mono',monospace;font-size:9.5px;
     letter-spacing:1.6px;fill:#3ed8e6;fill-opacity:0.58;
   }
-  @media (max-width:1060px){.nile{top:84px;right:-5%;width:min(360px,50vw);opacity:0.55}}
-  @media (max-width:700px){.nile{right:-14%;width:300px;opacity:0.34}.nile .label{display:none}}
+  @media (max-width:1060px){.nile{top:70px;bottom:-24%;left:auto;right:-6%;transform:none;width:min(430px,56vw);opacity:0.5}}
+  @media (max-width:700px){.nile{right:-16%;width:330px;opacity:0.32}.nile .label{display:none}}
 
   .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%}
   .eyebrow{
