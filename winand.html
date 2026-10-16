@@ -412,13 +412,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;
     text-transform:uppercase;padding:6px 11px;border:1px solid var(--line-2);color:var(--bone-2);
   }
-  .chairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
-  .chairs .ch{background:var(--ink-3);padding:18px 20px}
-  .chairs .ch .k{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:8px}
-  .chairs .ch .nm2{font-family:'Noto Serif JP',serif;font-size:1.02rem;color:var(--bone)}
-  .chairs .ch .nm2 .rom{font-family:'Fraunces',serif;color:var(--bone-2);font-size:0.94rem;margin-left:8px}
-  .chairs .ch .af{font-size:0.78rem;color:var(--bone-3);margin-top:5px}
-
+  .chairs{display:flex;flex-wrap:wrap;gap:4px 26px;margin-top:20px;opacity:0.6}
+  .chairs .ch{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px}
+  .chairs .ch .k{font-family:'JetBrains Mono',monospace;font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--bone-3)}
+  .chairs .ch .nm2{font-family:'Noto Serif JP',serif;font-size:0.72rem;color:var(--bone-3)}
+  .chairs .ch .nm2 .rom{font-family:'Fraunces',serif;color:var(--bone-3);font-size:0.7rem;margin-left:5px}
+  .chairs .ch .af{font-size:0.62rem;color:var(--bone-3)}
   /* ---- programme ---- */
   .prog{border-top:1px solid var(--line-2)}
   .row{
@@ -442,11 +441,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .row .what .ti-jp{font-family:'Noto Serif JP',serif;font-size:clamp(1rem,1.9vw,1.3rem);color:var(--bone);line-height:1.6}
   .row .what .ti-en{font-family:'Fraunces',serif;font-weight:300;font-size:1.02rem;color:var(--bone-2);margin-top:7px;line-height:1.4}
   .row .what .chair{
-    margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:0.63rem;
-    letter-spacing:0.1em;color:var(--bone-3);
+    margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:0.52rem;
+    letter-spacing:0.06em;color:var(--bone-3);opacity:0.55;
   }
-  .row .what .chair .lbl{color:var(--cyan-deep);text-transform:uppercase;letter-spacing:0.18em;margin-right:8px}
-  .row .what .chair .jpn{font-family:'Noto Serif JP',serif;letter-spacing:0.04em;color:var(--bone-2)}
+  .row .what .chair .lbl{color:var(--bone-3);text-transform:uppercase;letter-spacing:0.14em;margin-right:7px}
+  .row .what .chair .jpn{font-family:'Noto Serif JP',serif;letter-spacing:0.04em;color:var(--bone-3)}
   .row.brk{opacity:0.62}
   .row.brk:hover{background:none;padding-left:4px}
   .row.brk::before{display:none}
@@ -454,7 +453,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .row.brk .what .ti-jp{font-size:0.95rem;color:var(--bone-3)}
   .prog-note{
     margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:0.66rem;
-    letter-spacing:0.1em;color:var(--bone-3);
+    letter-spacing:0.08em;color:var(--bone-3);opacity:0.8;
   }
   .prog-note .jpn{font-family:'Noto Serif JP',serif;letter-spacing:0.04em}
   @media (max-width:720px){.row{grid-template-columns:1fr;gap:12px}}
@@ -499,7 +498,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding:14px 22px;transition:background .25s ease,color .25s ease}
   .dl:hover{background:var(--cyan);color:#04121b}
 
-  /* ---- organisers / support ---- */
+  /* ---- institutions / support ---- */
   .orgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
   .orgs .og{background:var(--ink-3);padding:26px 24px;display:flex;flex-direction:column;gap:12px}
   .orgs .og .logo{background:#fff;padding:12px 14px;align-self:flex-start;max-width:260px}
@@ -848,8 +847,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="sec-head rv">
       <div class="num">§ 02 // LECTURER</div>
-      <h2>The speaker, <em>and the chairs.</em></h2>
-      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">講師と司会。</span></span>
+      <h2>The speaker.</h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">講師。</span></span>
     </div>
 
     <div class="lect rv">
@@ -1018,13 +1017,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ ORGANISERS & SUPPORT ============ -->
+<!-- ============ INSTITUTIONS & SUPPORT ============ -->
 <section id="support" class="alt">
   <div class="container">
     <div class="sec-head rv">
-      <div class="num">§ 06 // ORGANISERS &amp; SUPPORT</div>
-      <h2>Held by, <em>and with thanks to —</em></h2>
-      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">主催と助成。</span></span>
+      <div class="num">§ 06 // INSTITUTIONS &amp; SUPPORT</div>
+      <h2>Institutions, <em>and with thanks to —</em></h2>
+      <span class="jp-sub"><span class="hash">#</span><span class="jp-t">関係機関と助成。</span></span>
     </div>
 
     <div class="orgs rv">
